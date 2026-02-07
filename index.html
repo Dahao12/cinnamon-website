@@ -155,6 +155,36 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             color: var(--cinnamon-dark);
         }
 
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--gray-dark);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .lang-btn:hover {
+            color: var(--cinnamon);
+        }
+
+        .lang-btn.active {
+            color: var(--cinnamon);
+            font-weight: 700;
+        }
+
+        .lang-divider {
+            color: var(--gray-medium);
+        }
+
         /* Hero Section */
         .hero {
             padding-top: 80px;
@@ -691,6 +721,19 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 display: block;
             }
 
+            .language-selector {
+                display: flex;
+                align-items: center;
+                gap: 0.3rem;
+                font-size: 0.85rem;
+                margin-left: 0.5rem;
+            }
+
+            .cta-button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
             .contact-grid {
                 grid-template-columns: 1fr;
             }
@@ -732,6 +775,13 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <div class="language-selector" id="languageSelector">
+                <button class="lang-btn active" data-lang="es">ES</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="ca">CA</button>
+            </div>
             <a href="https://www.fresha.com/book-now/cinnamon-nails-y2ip4l56/all-offer?share=true&pId=2783306" target="_blank" class="cta-button">Reserva</a>
         </nav>
     </header>
@@ -742,7 +792,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             <div class="hero-text">
                 <p class="subtitle">✨ Uñas Saludables & Belleza Natural ✨</p>
                 <h1>Tu Momento de Belleza en Barcelona</h1>
-                <p class="description">Descubre la combinación perfecta de productos no tóxicos, servicio express para profesionales y un ambiente acogedor. Cuidamos tus uñas y tu bienestar.</p>
+                <p class="description">Disfruta de nuestros servicios profesionales en un salón acogedor, con buena energía y un ambiente pensado para ti. Desde manicuras y tratamientos especializados hasta cuidados completos para tus uñas, encontrarás todo lo necesario para sentirte bien, relajarte y lucir impecable.</p>
                 
                 <div class="hero-stats">
                     <div class="stat">
@@ -1167,6 +1217,35 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
 
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+        });
+
+        // Language switcher
+        const langBtns = document.querySelectorAll('.lang-btn');
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                langBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                // Save language preference
+                const lang = btn.dataset.lang;
+                localStorage.setItem('selectedLanguage', lang);
+                // Language switching functionality can be added here
+                console.log('Language changed to:', lang);
+            });
+        });
+
+        // Load saved language preference on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage');
+            if (savedLang) {
+                langBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.lang === savedLang) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
         });
 
         // Header scroll effect
