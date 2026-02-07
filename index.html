@@ -724,14 +724,27 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             .language-selector {
                 display: flex;
                 align-items: center;
-                gap: 0.3rem;
+                gap: 0.5rem;
+                font-size: 0.8rem;
+                margin-left: 0.8rem;
+                padding: 0.4rem 0.8rem;
+                background: var(--cinnamon-pale);
+                border-radius: var(--border-radius);
+            }
+
+            .lang-btn {
                 font-size: 0.85rem;
-                margin-left: 0.5rem;
+                padding: 0.2rem 0.4rem;
+            }
+
+            .lang-divider {
+                display: none;
             }
 
             .cta-button {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+                margin-left: 0.5rem;
             }
 
             .contact-grid {
@@ -776,11 +789,11 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
             <div class="language-selector" id="languageSelector">
-                <button class="lang-btn active" data-lang="es">ES</button>
-                <span class="lang-divider">|</span>
-                <button class="lang-btn" data-lang="en">EN</button>
-                <span class="lang-divider">|</span>
-                <button class="lang-btn" data-lang="ca">CA</button>
+                <button class="lang-btn active" data-lang="es">🇪🇸 ES</button>
+                <span class="lang-divider"></span>
+                <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+                <span class="lang-divider"></span>
+                <button class="lang-btn" data-lang="ca">🇪🇺 CA</button>
             </div>
             <a href="https://www.fresha.com/book-now/cinnamon-nails-y2ip4l56/all-offer?share=true&pId=2783306" target="_blank" class="cta-button">Reserva</a>
         </nav>
@@ -796,7 +809,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 
                 <div class="hero-stats">
                     <div class="stat">
-                        <div class="stat-value">5★</div>
+                        <div class="stat-value">4.8★</div>
                         <div class="stat-label">Valoraciones</div>
                     </div>
                     <div class="stat">
@@ -1099,7 +1112,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                         <div class="contact-icon">⏰</div>
                         <div>
                             <strong>Horario</strong>
-                            <p>Lunes - Viernes: 10:00 - 20:00<br>Sábados: 10:00 - 18:00</p>
+                            <p>Lunes - Viernes: 10:00 - 20:00<br>Sábados: 10:00 - 16:00</p>
                         </div>
                     </div>
                     <div class="contact-buttons">
@@ -1123,8 +1136,8 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Teléfono (opcional)</label>
-                            <input type="tel" id="phone" name="phone">
+                            <label for="phone">Teléfono *</label>
+                            <input type="tel" id="phone" name="phone" required>
                         </div>
                         <div class="form-group">
                             <label for="service">Servicio de interés</label>
@@ -1277,7 +1290,17 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
         // Contact form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            const subject = `Formulario de Contacto - Cinnamon Nails - ${name}`;
+            const body = `Nombre: ${name}%0D%0AEmail: ${email}%0D%0ATeléfono: ${phone}%0D%0AServicio de interés: ${service}%0D%0A%0D%0AMensaje:%0D%0A${message}`;
+
+            window.location.href = `mailto:cinnamonnails.sf@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+            alert('¡Gracias por tu mensaje! Se abrirá tu cliente de correo para enviar el mensaje a Cinnamon Nails.');
             this.reset();
         });
 
