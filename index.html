@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinnamon Nails Studio - Healthy Nails | Express Service Barcelona</title>
-    <meta name="description" content="Cinnamon Nails Barcelona - 7-FREE polishes, 40-minute express lunch break for busy professionals. Safe, sustainable, stunning nails.">
+    <title>Cinnamon Nails Studio | Uñas Saludables | Servei Express Barcelona</title>
+    <meta name="description" content="Cinnamon Nails Barcelona - Uñas saludables sin tóxicos, servicio exprés de 40 minutos para profesionales. Seguro, sostenible, precioso.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -63,6 +63,33 @@
             margin-bottom: 1rem;
         }
 
+        /* Language Selector */
+        .lang-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .lang-selector select {
+            padding: 8px 16px;
+            font-size: 14px;
+            font-family: 'Lato', sans-serif;
+            border: 2px solid var(--cinnamon);
+            border-radius: 6px;
+            background: white;
+            color: var(--cinnamon-dark);
+            cursor: pointer;
+        }
+
+        .lang-selector select:hover {
+            background: var(--cinnamon-light);
+        }
+
         .btn {
             display: inline-block;
             padding: 1rem 2rem;
@@ -86,17 +113,6 @@
             background-color: var(--cinnamon-dark);
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(181, 135, 88, 0.5);
-        }
-
-        .btn-secondary {
-            background-color: var(--white);
-            color: var(--cinnamon);
-            border: 2px solid var(--cinnamon);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--cinnamon);
-            color: var(--white);
         }
 
         .container {
@@ -132,12 +148,6 @@
             font-size: 3.5rem;
         }
 
-        .hero .subheadline {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
         .hero-cta {
             display: flex;
             flex-direction: column;
@@ -146,13 +156,19 @@
             margin-top: 2rem;
         }
 
-        .hero .social-proof {
+        .hero-cta .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .social-proof {
             display: flex;
             gap: 2rem;
             justify-content: center;
             margin-top: 2rem;
             font-size: 0.875rem;
             opacity: 0.9;
+            flex-wrap: wrap;
         }
 
         .badge {
@@ -163,16 +179,12 @@
         }
 
         /* EXPRESS SECTION */
-        .express {
-            background-color: var(--white);
-        }
-
         .express-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            margin-top: 3rem;
+            margin: 3rem auto;
         }
 
         .express-list {
@@ -185,8 +197,11 @@
             border-bottom: 1px solid var(--gray-light);
         }
 
-        .express-list li:last-child {
-            border-bottom: none;
+        .express-pricing {
+            background: var(--gray-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
         }
 
         .express-image {
@@ -196,13 +211,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .express-pricing {
-            background: var(--gray-light);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
         }
 
         /* HEALTHY NAILS SECTION */
@@ -224,14 +232,14 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
-        .healthy-item .check {
+        .check {
             color: var(--green-health);
             font-weight: 700;
             font-size: 1.25rem;
             margin-bottom: 0.5rem;
         }
 
-        .healthy-item .cross {
+        .cross {
             color: var(--orange-express);
             font-weight: 500;
             font-size: 1.1rem;
@@ -286,47 +294,6 @@
             color: var(--white);
         }
 
-        .content-box {
-            background: var(--cinnamon-light);
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .step {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .step h4 {
-            color: var(--cinnamon);
-            margin-bottom: 0.5rem;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .benefit {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 2px solid var(--cinnamon-light);
-        }
-
         /* SERVICES SECTION */
         .services {
             background-color: var(--gray-light);
@@ -372,16 +339,12 @@
         }
 
         /* ABOUT SECTION */
-        .about {
-            background-color: var(--white);
-        }
-
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            margin-top: 3rem;
+            margin: 3rem auto;
         }
 
         .about-image {
@@ -470,17 +433,14 @@
         }
 
         .contact-info {
-            background: var(--gray-light);
+            background: var(--white);
             padding: 1.5rem;
             border-radius: 8px;
             margin-top: 3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         /* FAQ SECTION */
-        .faq {
-            background-color: var(--white);
-        }
-
         .faq-item {
             margin-bottom: 1.5rem;
             border-bottom: 1px solid var(--gray-light);
@@ -536,21 +496,6 @@
             color: var(--cinnamon);
         }
 
-        .footer-badges {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .footer-badge {
-            background: var(--cinnamon);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-        }
-
         .copyright {
             color: var(--gray-medium);
             font-size: 0.875rem;
@@ -568,16 +513,6 @@
 
             .hero h1 {
                 font-size: 2.25rem;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .hero-cta .btn {
-                width: 100%;
-                text-align: center;
             }
 
             .express-grid,
@@ -607,22 +542,30 @@
 </head>
 <body>
 
+    <!-- LANGUAGE SELECTOR -->
+    <div class="lang-selector">
+        <select id="langSelect" onchange="changeLanguage()">
+            <option value="es">🇪🇸 Español</option>
+            <option value="ca">🏴 Català</option>
+            <option value="en">🇬🇧 English</option>
+        </select>
+    </div>
+
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
-            <h1>CINNAMON NAILS STUDIO</h1>
-            <p class="subheadline">Healthy Nails. Sustainably Crafted. Express for Busy Professionals.</p>
-            <p style="margin-bottom: 2rem;">7-FREE polishes • 40-minute express sessions • Every client becomes a storyteller</p>
+            <h1 data-lang="heroTitle">CINNAMON NAILS STUDIO</h1>
+            <p class="subheadline" data-lang="heroSubtitle">Healthy Nails. Sustainably Crafted. Express for Busy Professionals.</p>
+            <p data-lang="heroDescription">7-FREE polishes • 40-minute express sessions • Every client becomes a storyteller</p>
 
             <div class="hero-cta">
-                <a href="#booking" class="btn btn-primary">👉 BOOK YOUR EXPRESS LUNCH BREAK (40 MIN)</a>
-                <a href="#services" class="btn btn-secondary" style="color: white; border-color: white;">View Services</a>
+                <a href="#booking" class="btn btn-primary" data-lang="ctaPrimary">👉 BOOK YOUR EXPRESS LUNCH BREAK (40 MIN)</a>
             </div>
 
             <div class="social-proof">
-                <span class="badge">50+ Happy Clients Featured</span>
-                <span class="badge">15% Off First Visit</span>
-                <span class="badge">Barcelona, Spain 🇪🇸</span>
+                <span class="badge" data-lang="badge1">50+ Happy Clients Featured</span>
+                <span class="badge" data-lang="badge2">15% Off First Visit</span>
+                <span class="badge" data-lang="badge3">Barcelona, Spain 🇪🇸</span>
             </div>
         </div>
     </section>
@@ -630,34 +573,34 @@
     <!-- EXPRESS LUNCH BREAK -->
     <section class="express" id="express">
         <div class="container">
-            <h2>🕐 EXPRESS LUNCH BREAK</h2>
-            <p>Get gorgeous nails in 40 minutes. Perfect for lunch break.</p>
+            <h2 data-lang="expressTitle">🕐 EXPRESS LUNCH BREAK</h2>
+            <p data-lang="expressSubtitle">Get gorgeous nails in 40 minutes. Perfect for lunch break.</p>
 
             <div class="express-grid">
                 <div>
-                    <p style="margin-bottom: 1.5rem;">Busy professional? We get it. Time poverty is real. But you deserve beautiful nails too.</p>
+                    <p style="margin-bottom: 1.5rem;" data-lang="expressDesc">Busy professional? We get it. Time poverty is real. But you deserve beautiful nails too.</p>
 
                     <ul class="express-list">
-                        <li>✅ Perfect for lunch break (60 min session = 20 min buffer)</li>
-                        <li>✅ Walk-in ready (no waiting)</li>
-                        <li>✅ Wi-Fi included (work while we work)</li>
-                        <li>✅ Coffee/tea on the house</li>
-                        <li>✅ Quality that rivals hour-long sessions</li>
+                        <li>✅ <span data-lang="expressPoint1">Perfect for lunch break (60 min session = 20 min buffer)</span></li>
+                        <li>✅ <span data-lang="expressPoint2">Walk-in ready (no waiting)</span></li>
+                        <li>✅ <span data-lang="expressPoint3">Wi-Fi included (work while we work)</span></li>
+                        <li>✅ <span data-lang="expressPoint4">Coffee/tea on the house</span></li>
+                        <li>✅ <span data-lang="expressPoint5">Quality that rivals hour-long sessions</span></li>
                     </ul>
 
                     <div class="express-pricing">
-                        <h3>Hours: 13:00-15:00 WEEKDAYS ONLY</h3>
-                        <p>8 Daily Slots (Book Early!)</p>
-                        <p style="margin-top: 1rem;"><strong>€60 (Express) | €55 (Regular)</strong></p>
+                        <h3 data-lang="expressHours">Hours: 13:00-15:00 WEEKDAYS ONLY</h3>
+                        <p data-lang="expressSlots">8 Daily Slots (Book Early!)</p>
+                        <p style="margin-top: 1rem;" data-lang="expressPricing"><strong>€60 (Express) | €55 (Regular)</strong></p>
                     </div>
 
-                    <a href="#booking" class="btn btn-primary">👉 BOOK YOUR LUNCH BREAK SLOT</a>
+                    <a href="#booking" class="btn btn-primary" data-lang="expressCta">👉 BOOK YOUR LUNCH BREAK SLOT</a>
                 </div>
 
                 <div class="express-image">
                     <div style="text-align: center; color: var(--cinnamon-dark);">
                         <p style="font-size: 5rem; line-height: 1;">👠</p>
-                        <p>Professional • Efficient • Beautiful</p>
+                        <p data-lang="expressImageAlt">Professional • Efficient • Beautiful</p>
                     </div>
                 </div>
             </div>
@@ -667,10 +610,10 @@
     <!-- HEALTHY NAILS CLUB -->
     <section class="healthy" id="healthy">
         <div class="container">
-            <h2>🌿 HEALTHY NAILS CLUB</h2>
-            <p>Beauty shouldn't cost your health. Safe, sustainable, stunning.</p>
+            <h2 data-lang="healthyTitle">🌿 HEALTHY NAILS CLUB</h2>
+            <p data-lang="healthySubtitle">Beauty shouldn't cost your health. Safe, sustainable, stunning.</p>
 
-            <p style="margin: 2rem 0;">At Cinnamon, we use only 7-FREE polishes and gentle removers.</p>
+            <p style="margin: 2rem 0;" data-lang="healthyIntro">At Cinnamon, we use only 7-FREE polishes and gentle removers.</p>
 
             <div class="healthy-list">
                 <div class="healthy-item">
@@ -691,156 +634,93 @@
                 </div>
             </div>
 
-            <div class="content-box">
-                <h3>What You Get:</h3>
-                <div class="steps">
-                    <div class="step">
-                        <h4>7-FREE Polishes</h4>
-                        <p>No toxins above</p>
-                    </div>
-                    <div class="step">
-                        <h4>Gentle Removers</h4>
-                        <p>Avocado & soy-based</p>
-                    </div>
-                    <div class="step">
-                        <h4>UV Filters</h4>
-                        <p>Exposure protection</p>
-                    </div>
-                    <div class="step">
-                        <h4>Education</h4>
-                        <p>Healthy nail routines</p>
-                    </div>
-                </div>
-            </div>
-
             <div class="testimonial-box">
-                <p>"My nails feel stronger, healthier, and I finally can get long sessions without cracking."</p>
-                <p class="testimonial-author">Happy Healthy Nails Club Member</p>
+                <p data-lang="healthyTestimonial">"My nails feel stronger, healthier, and I finally can get long sessions without cracking."</p>
+                <p class="testimonial-author" data-lang="healthyTestimonialAuthor">Happy Healthy Nails Club Member</p>
             </div>
 
-            <a href="#booking" class="btn btn-primary">👉 JOIN THE HEALTHY NAILS CLUB</a>
+            <a href="#booking" class="btn btn-primary" data-lang="healthyCta">👉 JOIN THE HEALTHY NAILS CLUB</a>
         </div>
     </section>
 
-    <!-- CINNAMON STORIES -->
+    <!-- Cinnamon Stories -->
     <section class="stories" id="stories">
         <div class="container">
-            <h2>📸 CINNAMON STORIES</h2>
-            <p>Every client becomes a storyteller. 50+ clients featured already. Your turn next.</p>
+            <h2 data-lang="storiesTitle">📸 CINNAMON STORIES</h2>
+            <p data-lang="storiesSubtitle">Every client becomes a storyteller. 50+ clients featured already. Your turn next.</p>
 
             <div class="stories-grid">
                 <div class="story-card">
                     <div class="story-content">
-                        <h4>Maria's Transformation</h4>
-                        <p>From damaged to healthy</p>
+                        <h4 data-lang="story1Title">Maria's Transformation</h4>
+                        <p data-lang="story1Subtitle">From damaged to healthy</p>
                     </div>
                 </div>
                 <div class="story-card">
                     <div class="story-content">
-                        <h4>Sarah's Journey</h4>
-                        <p>40-minute express champion</p>
+                        <h4 data-lang="story2Title">Sarah's Journey</h4>
+                        <p data-lang="story2Subtitle">40-minute express champion</p>
                     </div>
                 </div>
                 <div class="story-card">
                     <div class="story-content">
-                        <h4>Anna's Story</h4>
-                        <p>Healthy Nails Club member</p>
+                        <h4 data-lang="story3Title">Anna's Story</h4>
+                        <p data-lang="story3Subtitle">Healthy Nails Club member</p>
                     </div>
                 </div>
             </div>
 
-            <div class="content-box">
-                <h3>How It Works:</h3>
-                <div class="steps">
-                    <div class="step">
-                        <h4>1️⃣ Capture</h4>
-                        <p>We photograph your nails</p>
-                    </div>
-                    <div class="step">
-                        <h4>2️⃣ Feature</h4>
-                        <p>Share on our Instagram</p>
-                    </div>
-                    <div class="step">
-                        <h4>3️⃣ Tag</h4>
-                        <p>Tag you + share your story</p>
-                    </div>
-                    <div class="step">
-                        <h4>4️⃣ Reward</h4>
-                        <p>Get 15% off next visit</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="benefits-grid">
-                <div class="benefit">
-                    <h4>📸 Free Photography</h4>
-                    <p>Professional nail shots</p>
-                </div>
-                <div class="benefit">
-                    <h4>🏷️ Social Proof</h4>
-                    <p>Feature on our IG</p>
-                </div>
-                <div class="benefit">
-                    <h4>💬 Community</h4>
-                    <p>Join our family</p>
-                </div>
-                <div class="benefit">
-                    <h4>🎁 15% Discount</h4>
-                    <p>Incentive for stories</p>
-                </div>
-            </div>
-
-            <a href="#booking" class="btn btn-primary">👉 BOOK YOUR SESSION - YOUR STORY AWAITS</a>
+            <a href="#booking" class="btn btn-primary" data-lang="storiesCta">👉 BOOK YOUR SESSION - YOUR STORY AWAITS</a>
         </div>
     </section>
 
     <!-- SERVICES -->
     <section class="services" id="services">
         <div class="container">
-            <h2>💅 SERVICES & PRICING</h2>
-            <p>Transparent pricing. No surprises.</p>
+            <h2 data-lang="servicesTitle">💅 SERVICES & PRICING</h2>
+            <p data-lang="servicesSubtitle">Transparent pricing. No surprises.</p>
 
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>EXPRESS LUNCH BREAK</h3>
-                    <p>40-Minute Session</p>
-                    <p>Perfect for busy professionals</p>
+                    <h3 data-lang="serviceExpressTitle">EXPRESS LUNCH BREAK</h3>
+                    <p data-lang="serviceExpressDesc">40-Minute Session</p>
+                    <p data-lang="serviceExpressDesc2">Perfect for busy professionals</p>
                     <div class="service-price">€60</div>
                     <ul>
-                        <li>French Gel</li>
-                        <li>Regular Gel</li>
-                        <li>Express Service</li>
-                        <li>Book 13:00-15:00</li>
+                        <li data-lang="serviceExpressList1">French Gel</li>
+                        <li data-lang="serviceExpressList2">Regular Gel</li>
+                        <li data-lang="serviceExpressList3">Express Service</li>
+                        <li data-lang="serviceExpressList4">Book 13:00-15:00</li>
                     </ul>
-                    <a href="#booking" class="btn btn-primary">Book</a>
+                    <a href="#booking" class="btn btn-primary" data-lang="bookNow">Book</a>
                 </div>
 
                 <div class="service-card featured">
-                    <h3>HEALTHY NAILS CLUB</h3>
-                    <p>Safe, Sustainable Sessions</p>
-                    <p>7-FREE polishes only</p>
+                    <h3 data-lang="serviceHealthyTitle">HEALTHY NAILS CLUB</h3>
+                    <p data-lang="serviceHealthyDesc">Safe, Sustainable Sessions</p>
+                    <p data-lang="serviceHealthyDesc2">7-FREE polishes only</p>
                     <div class="service-price">€55</div>
                     <ul>
-                        <li>French Gel</li>
-                        <li>Regular Gel</li>
-                        <li>Natural Manicure</li>
-                        <li>Anytime slots</li>
+                        <li data-lang="serviceHealthyList1">French Gel</li>
+                        <li data-lang="serviceHealthyList2">Regular Gel</li>
+                        <li data-lang="serviceHealthyList3">Natural Manicure</li>
+                        <li data-lang="serviceHealthyList4">Anytime slots</li>
                     </ul>
-                    <a href="#booking" class="btn btn-primary">Book</a>
+                    <a href="#booking" class="btn btn-primary" data-lang="bookNow">Book</a>
                 </div>
 
                 <div class="service-card">
-                    <h3>FIRST TIME OFFER</h3>
-                    <p>15% OFF FIRST VISIT</p>
-                    <p>Welcome to Cinnamon!</p>
-                    <div class="service-price">€46.75</div>
+                    <h3 data-lang="serviceFirstTitle">FIRST TIME OFFER</h3>
+                    <p data-lang="serviceFirstDesc">15% OFF FIRST VISIT</p>
+                    <p data-lang="serviceFirstDesc2">Welcome to Cinnamon!</p>
+                    <div class="service-price" style="font-size: 1.5rem;">€46.75</div>
                     <ul>
-                        <li>Try risk-free</li>
-                        <li>Experience healthy</li>
-                        <li>Join community</li>
-                        <li>New clients only</li>
+                        <li data-lang="serviceFirstList1">Try risk-free</li>
+                        <li data-lang="serviceFirstList2">Experience healthy</li>
+                        <li data-lang="serviceFirstList3">Join community</li>
+                        <li data-lang="serviceFirstList4">New clients only</li>
                     </ul>
-                    <a href="#booking" class="btn btn-primary">Book</a>
+                    <a href="#booking" class="btn btn-primary" data-lang="bookNow">Book</a>
                 </div>
             </div>
         </div>
@@ -849,33 +729,33 @@
     <!-- ABOUT -->
     <section class="about" id="about">
         <div class="container">
-            <h2>🌿 ABOUT CINNAMON</h2>
-            <p>Safe. Sustainable. Stunning.</p>
+            <h2 data-lang="aboutTitle">🌿 ABOUT CINNAMON</h2>
+            <p data-lang="aboutSubtitle">Safe. Sustainable. Stunning.</p>
 
             <div class="about-grid">
                 <div>
-                    <p style="margin-bottom: 1.5rem;">We believe beauty shouldn't cost your health.</p>
-                    <p>At Cinnamon, we prioritized safety first - 7-FREE polishes, gentle removers, and UV filter lamps. Because sustainable beauty is the only beauty.</p>
-                    <p style="margin: 1.5rem 0;">We understand time is precious - that's why we created Express Lunch Break sessions for busy professionals like you.</p>
-                    <p>We believe in community - that's why every client becomes a Cinnamon Story, featured on our Instagram and joined by women supporting women.</p>
-                    <p style="margin-top: 1.5rem; font-weight: 500;">Join us. Your health. Your time. Your story.</p>
+                    <p style="margin-bottom: 1.5rem;" data-lang="aboutDesc1">We believe beauty shouldn't cost your health.</p>
+                    <p data-lang="aboutDesc2">At Cinnamon, we prioritized safety first - 7-FREE polishes, gentle removers, and UV filter lamps. Because sustainable beauty is the only beauty.</p>
+                    <p style="margin: 1.5rem 0;" data-lang="aboutDesc3">We understand time is precious - that's why we created Express Lunch Break sessions for busy professionals like you.</p>
+                    <p data-lang="aboutDesc4">We believe in community - that's why every client becomes a Cinnamon Story, featured on our Instagram and joined by women supporting women.</p>
+                    <p style="margin-top: 1.5rem; font-weight: 500;" data-lang="aboutDesc5">Join us. Your health. Your time. Your story.</p>
 
                     <div class="values-grid">
                         <div class="value-item">
-                            <h4>✨ Health First</h4>
-                            <p>7-FREE only</p>
+                            <h4 data-lang="value1Title">✨ Health First</h4>
+                            <p data-lang="value1Desc">7-FREE only</p>
                         </div>
                         <div class="value-item">
-                            <h4>⏰ Time Conscious</h4>
-                            <p>Express options</p>
+                            <h4 data-lang="value2Title">⏰ Time Conscious</h4>
+                            <p data-lang="value2Desc">Express options</p>
                         </div>
                         <div class="value-item">
-                            <h4>💙 Community</h4>
-                            <p>Your stories matter</p>
+                            <h4 data-lang="value3Title">💙 Community</h4>
+                            <p data-lang="value3Desc">Your stories matter</p>
                         </div>
                         <div class="value-item">
-                            <h4>🌿 Sustainability</h4>
-                            <p>Gentle products</p>
+                            <h4 data-lang="value4Title">🌿 Sustainability</h4>
+                            <p data-lang="value4Desc">Gentle products</p>
                         </div>
                     </div>
                 </div>
@@ -883,8 +763,8 @@
                 <div class="about-image">
                     <div style="text-align: center;">
                         <p style="font-size: 4rem; line-height: 1;">💅</p>
-                        <p style="margin-bottom: 0.5rem;"><strong>Cinnamon Team</strong></p>
-                        <p>Barcelona, Spain 🇪🇸</p>
+                        <p style="margin-bottom: 0.5rem;"><strong data-lang="aboutImageTitle">Cinnamon Team</strong></p>
+                        <p data-lang="aboutImageLocation">Barcelona, Spain 🇪🇸</p>
                     </div>
                 </div>
             </div>
@@ -894,67 +774,65 @@
     <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
         <div class="container">
-            <h2>💬 WHAT CLIENTS SAY</h2>
-            <p>Real results. Real stories.</p>
+            <h2 data-lang="testimonialsTitle">💬 WHAT CLIENTS SAY</h2>
+            <p data-lang="testimonialsSubtitle">Real results. Real stories.</p>
 
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p>"At first I was skeptical - nails in 40 min? But Cinnamon proved me wrong. I get French gel that lasts 2+ weeks, all while answering emails."</p>
-                    <p class="testimonial-author">Sarah</p>
-                    <p class="testimonial-role">Marketing Executive</p>
+                    <p data-lang="testimonial1">"At first I was skeptical - nails in 40 min? But Cinnamon proved me wrong. I get French gel that lasts 2+ weeks, all while answering emails."</p>
+                    <p class="testimonial-author" data-lang="testimonial1Author">Sarah</p>
+                    <p class="testimonial-role" data-lang="testimonial1Role">Marketing Executive</p>
                 </div>
 
                 <div class="testimonial-card">
-                    <p>"I never realized how toxic regular polish was. My nails feel stronger, healthier. Cinnamon made me feel seen."</p>
-                    <p class="testimonial-author">Maria</p>
-                    <p class="testimonial-role">Business Owner</p>
+                    <p data-lang="testimonial2">"I never realized how toxic regular polish was. My nails feel stronger, healthier. Cinnamon made me feel seen."</p>
+                    <p class="testimonial-author" data-lang="testimonial2Author">Maria</p>
+                    <p class="testimonial-role" data-lang="testimonial2Role">Business Owner</p>
                 </div>
 
                 <div class="testimonial-card">
-                    <p>"I love that they use 7-FREE polishes - safe and still beautiful. And the Express Lunch Break? Game changer."</p>
-                    <p class="testimonial-author">Anna</p>
-                    <p class="testimonial-role">Teacher</p>
+                    <p data-lang="testimonial3">"I love that they use 7-FREE polishes - safe and still beautiful. And the Express Lunch Break? Game changer."</p>
+                    <p class="testimonial-author" data-lang="testimonial3Author">Anna</p>
+                    <p class="testimonial-role" data-lang="testimonial3Role">Teacher</p>
                 </div>
             </div>
-
-            <a href="#booking" class="btn btn-primary">👉 JOIN OUR HAPPY CLIENTS</a>
         </div>
     </section>
 
     <!-- CONTACT & BOOKING -->
     <section class="contact" id="booking">
         <div class="container">
-            <h2>📞 CONTACT & BOOKING</h2>
-            <p>Ready for healthy nails? Book online or message us directly.</p>
+            <h2 data-lang="contactTitle">📞 CONTACT & BOOKING</h2>
+            <p data-lang="contactSubtitle">Ready for healthy nails? Book online or message us directly.</p>
 
             <div class="contact-grid">
                 <div class="contact-card">
-                    <h3>💬 WhatsApp Us</h3>
-                    <p>Fastest response - Book directly!</p>
-                    <a href="https://wa.me/34000000000" target="_blank" class="btn btn-primary">WhatsApp Booking</a>
-                    <p style="margin-top: 1rem; font-size: 0.875rem;">Text: "Hi! I'd like to book - [Express Lunch Break / Healthy Nails Club / Regular] - [Preferred time]"</p>
+                    <h3 data-lang="contactWhatsApp">💬 WhatsApp Us</h3>
+                    <p data-lang="contactWhatsAppDesc">Fastest response - Book directly!</p>
+                    <a href="https://wa.me/34000000000" target="_blank" class="btn btn-primary" data-lang="contactWhatsAppBtn">WhatsApp Booking</a>
+                    <p style="margin-top: 1rem; font-size: 0.875rem;" data-lang="contactWhatsAppHint">Text: "Hi! I'd like to book - [Express Lunch Break / Healthy Nails Club / Regular] - [Preferred time]"</p>
                 </div>
 
                 <div class="contact-card">
-                    <h3>📝 Online Booking</h3>
-                    <p>Choose type & time</p>
-                    <a href="https://wa.me/34000000000" target="_blank" class="btn btn-primary">Book Now</a>
-                    <p style="margin-top: 1rem; font-size: 0.875rem;">Quick - 2 minutes to complete</p>
+                    <h3 data-lang="contactOnline">📝 Online Booking</h3>
+                    <p data-lang="contactOnlineDesc">Choose type & time</p>
+                    <a href="https://wa.me/34000000000" target="_blank" class="btn btn-primary" data-lang="contactOnlineBtn">Book Now</a>
+                    <p style="margin-top: 1rem; font-size: 0.875rem;" data-lang="contactOnlineHint">Quick - 2 minutes to complete</p>
                 </div>
 
                 <div class="contact-card">
-                    <h3>✉️ Email Us</h3>
-                    <p>Detailed questions?</p>
-                    <a href="mailto:hello@cinnamonnails.com" class="btn btn-primary">Email Us</a>
-                    <p style="margin-top: 1rem; font-size: 0.875rem;">Response: 24 hours</p>
+                    <h3 data-lang="contactEmail">✉️ Email Us</h3>
+                    <p data-lang="contactEmailDesc">Detailed questions?</p>
+                    <a href="mailto:hello@cinnamonnails.com" class="btn btn-primary" data-lang="contactEmailBtn">Email Us</a>
+                    <p style="margin-top: 1rem; font-size: 0.875rem;" data-lang="contactEmailHint">Response: 24 hours</p>
                 </div>
             </div>
 
             <div class="contact-info">
-                <h3 style="margin-bottom: 1rem;">Location & Hours</h3>
-                <p>📍 Location: Barcelona, Spain 🇪🇸</p>
-                <p>🕐 Hours: Mon-Fri 10:00-20:00 (Express 13:00-15:00)</p>
-                <p>💳 Payment: Cash, Card, Bizum</p>
+                <h3 style="margin-bottom: 1rem;" data-lang="contactInfoTitle">Location & Hours</h3>
+                <p data-lang="contactLocation">📍 Location: Barcelona, Spain 🇪🇸</p>
+                <p data-lang="contactHours">🕐 Hours: Mon-Fri 10:00-20:00 (Express 13:00-15:00)</p>
+                <p data-lang="contactPayment">💳 Payment: Cash, Card, Bizum</p>
             </div>
         </div>
     </section>
@@ -962,44 +840,32 @@
     <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
-            <h2>❓ FREQUENTLY ASKED QUESTIONS</h2>
+            <h2 data-lang="faqTitle">❓ FREQUENTLY ASKED QUESTIONS</h2>
 
             <div class="faq-item">
-                <div class="faq-question">What's the difference between Express Lunch Break and Regular?</div>
-                <div class="faq-answer">
-                    Express is 40 minutes (13:00-15:00 only, €60) - perfect for lunch. Regular is anytime, 55-60 minutes (€55). Same quality, different time.
-                </div>
+                <div class="faq-question" data-lang="faq1Question">What's the difference between Express Lunch Break and Regular?</div>
+                <div class="faq-answer" data-lang="faq1Answer">Express is 40 minutes (13:00-15:00 only, €60) - perfect for lunch. Regular is anytime, 55-60 minutes (€55). Same quality, different time.</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">What does 7-FREE mean?</div>
-                <div class="faq-answer">
-                    Our polishes contain NO toxic chemicals: Formaldehyde, Toluene, DBP, Formaldehyde Resin, Camphor, Ethyl Tosylamide, Xylene. Safe alternatives only.
-                </div>
+                <div class="faq-question" data-lang="faq2Question">What does 7-FREE mean?</div>
+                <div class="faq-answer" data-lang="faq2Answer">Our polishes contain NO toxic chemicals: Formaldehyde, Toluene, DBP, Formaldehyde Resin, Camphor, Ethyl Tosylamide, Xylene. Safe alternatives only.</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">Is Cinnamon Stories compulsory?</div>
-                <div class="faq-answer">
-                    No! We feature clients who opt-in. Your privacy is respected. If you don't want featured, just let us know - no problem.
-                </div>
+                <div class="faq-question" data-lang="faq3Question">Is Cinnamon Stories compulsory?</div>
+                <div class="faq-answer" data-lang="faq3Answer">No! We feature clients who opt-in. Your privacy is respected. If you don't want featured, just let us know - no problem.</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">Do you offer discounts?</div>
-                <div class="faq-answer">
-                    First-time clients get 15% off. Cinnamon Stories members also get 15% off next visits. We prioritize loyalty over constant sales.
-                </div>
+                <div class="faq-question" data-lang="faq4Question">Do you offer discounts?</div>
+                <div class="faq-answer" data-lang="faq4Answer">First-time clients get 15% off. Cinnamon Stories members also get 15% off next visits. We prioritize loyalty over constant sales.</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">How long do gel manicures last?</div>
-                <div class="faq-answer">
-                    Typically 3-4 weeks with proper care. Our longer sessions (Healthy Nails Club) maximize longevity.
-                </div>
+                <div class="faq-question" data-lang="faq5Question">How long do gel manicures last?</div>
+                <div class="faq-answer" data-lang="faq5Answer">Typically 3-4 weeks with proper care. Our longer sessions (Healthy Nails Club) maximize longevity.</div>
             </div>
-
-            <p style="margin-top: 2rem;"><a href="#booking" style="color: var(--cinnamon); text-decoration: none; font-weight: 500;">Still have questions? 💬 Message us on WhatsApp</a></p>
         </div>
     </section>
 
@@ -1007,25 +873,414 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="#express">Express Lunch Break</a>
-                <a href="#healthy">Healthy Nails Club</a>
-                <a href="#stories">Cinnamon Stories</a>
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#booking">Contact</a>
+                <a href="#express" data-lang="footerExpress">Express Lunch Break</a>
+                <a href="#healthy" data-lang="footerHealthy">Healthy Nails Club</a>
+                <a href="#stories" data-lang="footerStories">Cinnamon Stories</a>
+                <a href="#services" data-lang="footerServices">Services</a>
+                <a href="#about" data-lang="footerAbout">About</a>
+                <a href="#booking" data-lang="footerContact">Contact</a>
             </div>
 
-            <div class="footer-badges">
-                <span class="footer-badge">💙 Healthy Nails Club</span>
-                <span class="footer-badge">⏰ Express Lunch Break</span>
-                <span class="footer-badge">📸 Cinnamon Stories</span>
-            </div>
-
-            <p class="copyright">© 2026 Cinnamon Nails Studio. All rights reserved. | Barcelona, Spain 🇪🇸</p>
+            <p class="copyright" data-lang="footerCopyright">© 2026 Cinnamon Nails Studio. All rights reserved. | Barcelona, Spain 🇪🇸</p>
         </div>
     </footer>
 
     <script>
+        // Language Data
+        const translations = {
+            es: {
+                heroTitle: "CINNAMON NAILS STUDIO",
+                heroSubtitle: "Uñas Saludables. Sostenibles. Express para Profesionales Ocupados.",
+                heroDescription: "Esmaltes 7-FREE • Servicio exprés 40 minutos • Cada cliente se convierte en historia",
+                ctaPrimary: "👉 RESERVA TU ALMUERZO EXPRÉS (40 MIN)",
+                badge1: "+50 Clientes Felices Destacados",
+                badge2: "15% Descuento Primera Visita",
+                badge3: "Barcelona, España 🇪🇸",
+                expressTitle: "🕐 ALMUERZO EXPRÉS",
+                expressSubtitle: "Uñas preciosas en 40 minutos. Perfectas para pausa del almuerzo.",
+                expressDesc: "¿Profesional ocupada? Lo entendemos. La pobreza de tiempo es real. Pero mereces uñas hermosas también.",
+                expressPoint1: "Perfecto para pausa del almuerzo (60 min sesión = 20 min buffer)",
+                expressPoint2: "Listo para entrar (sin espera)",
+                expressPoint3: "Wi-Fi incluido (trabajas mientras trabajamos)",
+                expressPoint4: "Café/té de la casa",
+                expressPoint5: "Calidad que rivaliza con sesiones de una hora",
+                expressHours: "Horarios: 13:00-15:00 SOLO ENTRE SEMANA",
+                expressSlots: "8 Turnos Diarios (¡Reserva temprano!)",
+                expressPricing: "<strong>€60 (Exprés) | €55 (Regular)</strong>",
+                expressCta: "👉 RESERVA TU TURNO ALMUERZO EXPRÉS",
+                expressImageAlt: "Profesional • Eficiente • Hermosa",
+                healthyTitle: "🌿 CLUB UÑAS SALUDABLES",
+                healthySubtitle: "La belleza no debe costar tu salud. Seguro, sostenible, preciosa.",
+                healthyIntro: "En Cinnamon, usamos solo esmaltes 7-FREE y removedores suaves.",
+                healthyTestimonial: "\"Mis uñas se sienten más fuertes, más saludables, y finalmente puedo tener sesiones largas sin quebrar.\"",
+                healthyTestimonialAuthor: "Miembro Feliz del Club Uñas Saludables",
+                healthyCta: "👉 ÚNETE AL CLUB UÑAS SALUDABLES",
+                storiesTitle: "📸 HISTORIAS CINNAMON",
+                storiesSubtitle: "Cada cliente se convierte en contadora de historias. +50 clientes destacados ya. Tu turno next.",
+                story1Title: "Transformación de María",
+                story1Subtitle: "De dañadas a saludables",
+                story2Title: "Viaje de Sarah",
+                story2Subtitle: "Campeona exprés 40 minutos",
+                story3Title: "Historia de Anna",
+                story3Subtitle: "Miembro del Club Uñas Saludables",
+                storiesCta: "👉 RESERVA TU SESIÓN - TU HISTORIA ESPERA",
+                servicesTitle: "💅 SERVICIOS Y PRECIOS",
+                servicesSubtitle: "Precios transparentes. Sin sorpresas.",
+                serviceExpressTitle: "ALMUERZO EXPRÉS",
+                serviceExpressDesc: "Sesión 40 Minutos",
+                serviceExpressDesc2: "Perfecto para profesionales ocupados",
+                serviceExpressList1: "Gel Francés",
+                serviceExpressList2: "Gel Regular",
+                serviceExpressList3: "Servicio Exprés",
+                serviceExpressList4: "Reserva 13:00-15:00",
+                serviceHealthyTitle: "CLUB UÑAS SALUDABLES",
+                serviceHealthyDesc: "Sesiones Seguras, Sostenibles",
+                serviceHealthyDesc2: "Solo esmaltes 7-FREE",
+                serviceHealthyList1: "Gel Francés",
+                serviceHealthyList2: "Gel Regular",
+                serviceHealthyList3: "Manicura Natural",
+                serviceHealthyList4: "Cualquier horario",
+                serviceFirstTitle: "OFERTA PRIMERA VEZ",
+                serviceFirstDesc: "15% DESCUENTO PRIMERA VISITA",
+                serviceFirstDesc2: "Bienvenida a Cinnamon",
+                serviceFirstList1: "Prueba sin riesgo",
+                serviceFirstList2: "Experimenta saludable",
+                serviceFirstList3: "Únete a comunidad",
+                serviceFirstList4: "Solo nuevos clientes",
+                bookNow: "Reserva",
+                aboutTitle: "🌿 SOBRE CINNAMON",
+                aboutSubtitle: "Seguro. Sostenible. Preciosa.",
+                aboutDesc1: "Creemos que la belleza no debe costar tu salud.",
+                aboutDesc2: "En Cinnamon, priorizamos seguridad primero - esmaltes 7-FREE, removedores suaves, lámparas UV con filtro. Porque belleza sostenible es la única belleza.",
+                aboutDesc3: "Entendemos que el tiempo es precioso - por eso creamos sesiones Almuerzo Exprés para profesionales ocupadas como tú.",
+                aboutDesc4: "Creemos en comunidad - por eso cada cliente se convierte en Historia Cinnamon, destacada en nuestro Instagram y unida por mujeres apoyando mujeres.",
+                aboutDesc5: "Únete. Tu salud. Tu tiempo. Tu historia.",
+                value1Title: "✨ Salud Primero",
+                value1Desc: "Solo 7-FREE",
+                value2Title: "⏰ Consciente del Tiempo",
+                value2Desc: "Opciones exprés",
+                value3Title: "💙 Comunidad",
+                value3Desc: "Tus historias importan",
+                value4Title: "🌿 Sostenibilidad",
+                value4Desc: "Productos suaves",
+                aboutImageTitle: "Equipo Cinnamon",
+                aboutImageLocation: "Barcelona, España 🇪🇸",
+                testimonialsTitle: "💬 LO QUE DICEN LOS CLIENTES",
+                testimonialsSubtitle: "Resultados reales. Historias reales.",
+                testimonial1: "\"Al principio era escéptica - ¿uñas en 40 min? Pero Cinnamon me demostró lo contrario. Recojo gel francés que dura 2+ semanas, todo mientras respondo correos.\"",
+                testimonial1Author: "Sarah",
+                testimonial1Role: "Ejecutiva Marketing",
+                testimonial2: "\"Nunca me di cuenta de cuán tóxico era el esmalte regular. Mis uñas se sienten más fuertes, más saludables. Cinnamon me hizo sentir vista.\"",
+                testimonial2Author: "María",
+                testimonial2Role: "Dueña de Negocio",
+                testimonial3: "\"Amo que usan esmaltes 7-FREE - seguros y aún hermosos. ¿Y el Almuerzo Exprés? Game changer.\"",
+                testimonial3Author: "Anna",
+                testimonial3Role: "Profesora",
+                contactTitle: "📞 CONTACTO Y RESERVA",
+                contactSubtitle: "¿Lista para uñas saludables? Reserva online o contáctanos directamente.",
+                contactWhatsApp: "💬 WhatsApp",
+                contactWhatsAppDesc: "Respuesta más rápida - Reserva directamente!",
+                contactWhatsAppBtn: "Reserva WhatsApp",
+                contactWhatsAppHint: "Texto: \"¡Hola! Me gustaría reservar - [Almuerzo Exprés / Club Uñas Saludables / Regular] - [Horario preferido]\"",
+                contactOnline: "📝 Reserva Online",
+                contactOnlineDesc: "Tipo y horario",
+                contactOnlineBtn: "Reserva Ahora",
+                contactOnlineHint: "Rápido - 2 minutos completar",
+                contactEmail: "✉️ Email",
+                contactEmailDesc: "¿Preguntas detalladas?",
+                contactEmailBtn: "Email",
+                contactEmailHint: "Respuesta: 24 horas",
+                contactInfoTitle: "Ubicación y Horarios",
+                contactLocation: "📍 Ubicación: Barcelona, España 🇪🇸",
+                contactHours: "🕐 Horarios: Lun-Vie 10:00-20:00 (Exprés 13:00-15:00)",
+                contactPayment: "💳 Pago: Efectivo, Tarjeta, Bizum",
+                faqTitle: "❓ PREGUNTAS FRECUENTES",
+                faq1Question: "¿Cuál es la diferencia entre Almuerzo Exprés y Regular?",
+                faq1Answer: "Exprés es 40 minutos (13:00-15:00 solo, €60) - perfecto para almuerzo. Regular es cualquier horario, 55-60 minutos (€55). Misma calidad, diferente tiempo.",
+                faq2Question: "¿Qué significa 7-FREE?",
+                faq2Answer: "Nuestros esmaltes NO contienen productos químicos tóxicos: Formaldehido, Tolueno, DBP, Resina Formaldehido, Alcanfor, Etiltosilamida, Xileno. Solo alternativas seguras.",
+                faq3Question: "¿Historias Cinnamon es obligatorio?",
+                faq3Answer: "¡No! Destacamos clientes que optan. Tu privacidad es respetada. Si no quieres ser destacada, solo avísanos - sin problema.",
+                faq4Question: "¿Ofrecen descuentos?",
+                faq4Answer: "Clientes primera vez reciben 15% descuento. Miembros Historias Cinnamon también reciben 15% descuento próximas visitas. Priorizamos lealtad sobre ventas constantes.",
+                faq5Question: "¿Cuánto duran las manicuras gel?",
+                faq5Answer: "Típicamente 3-4 semanas con cuidado adecuado. Nuestras sesiones más largas (Club Uñas Saludables) maximizan durabilidad.",
+                footerExpress: "Almuerzo Exprés",
+                footerHealthy: "Club Uñas Saludables",
+                footerStories: "Historias Cinnamon",
+                footerServices: "Servicios",
+                footerAbout: "Sobre",
+                footerContact: "Contacto",
+                footerCopyright: "© 2026 Cinnamon Nails Studio. Todos los derechos reservados. | Barcelona, España 🇪🇸"
+            },
+            ca: {
+                heroTitle: "CINNAMON NAILS STUDIO",
+                heroSubtitle: "Ungles Sanes. Sostenibles. Express per Professionals Ocupats.",
+                heroDescription: "Esmalts 7-FREE • Servei exprés 40 minuts • Cada client es converteix en historia",
+                ctaPrimary: "👉 RESERVA TEU DIAR EXPRESS (40 MIN)",
+                badge1: "+50 Clients Feliços Destacats",
+                badge2: "15% Descompte Primera Visita",
+                badge3: "Barcelona, Espanya 🇪🇸",
+                expressTitle: "🕐 DIAR EXPRESS",
+                expressSubtitle: "Ungles precioses en 40 minuts. Perfectes per pausa dinar.",
+                expressDesc: "Professional ocupada? L'entenim. La pobresa de temps és real. Però mereixes unges boniques també.",
+                expressPoint1: "Perfecte per pausa dinar (60 min sessió = 20 min buffer)",
+                expressPoint2: "List per entrar (sense espera)",
+                expressPoint3: "Wi-Fi inclòs (treballes mentre treballem)",
+                expressPoint4: "Cafè/té de la casa",
+                expressPoint5: "Qualitat que rivalitza amb sessions d'una hora",
+                expressHours: "Horaris: 13:00-15:00 SOLS ENTRE SETMANA",
+                expressSlots: "8 Torns Diaris (Reserva primer!)",
+                expressPricing: "<strong>€60 (Exprés) | €55 (Regular)</strong>",
+                expressCta: "👉 RESERVA TEU TORNO DIAR EXPRESS",
+                expressImageAlt: "Professional • Eficient • Bonica",
+                healthyTitle: "🌿 CLUB UNGLES SANES",
+                healthySubtitle: "La bellesa no ha de costar-te la salut. Segur, sostenible, preciós.",
+                healthyIntro: "A Cinnamon, usem només esmalts 7-FREE i removedors suaus.",
+                healthyTestimonial: "\"Les meves unges es sent més fortes, més sanes, i finalment puc tenir sessions llargues sense trencar.\"",
+                healthyTestimonialAuthor: "Membre Feliç del Club Ungles Sanes",
+                healthyCta: "👉 UNTEIX-TE AL CLUB UNGLES SANES",
+                storiesTitle: "📸 HISTÒRIES CINNAMON",
+                storiesSubtitle: "Cada client es converteix en narradora d'historietes. +50 clients destacats ja. Torn següent.",
+                story1Title: "Transformació de Maria",
+                story1Subtitle: "De danyades a sanes",
+                story2Title: "Viatge de Sarah",
+                story2Subtitle: "Campiona express 40 minuts",
+                story3Title: "Història d'Anna",
+                story3Subtitle: "Membre del Club Ungles Sanes",
+                storiesCta: "👉 RESERVA LA TEVA SESSIÓ - LA TEVA HISTÒRIA ESPERA",
+                servicesTitle: "💅 SERVEIS I PREUS",
+                servicesSubtitle: "Preus transparents. Sense sorpreses.",
+                serviceExpressTitle: "DIAR EXPRESS",
+                serviceExpressDesc: "Sessió 40 Minuts",
+                serviceExpressDesc2: "Perfecte per professionals ocupats",
+                serviceExpressList1: "Gel Francès",
+                serviceExpressList2: "Gel Regular",
+                serviceExpressList3: "Servei Express",
+                serviceExpressList4: "Reserva 13:00-15:00",
+                serviceHealthyTitle: "CLUB UNGLES SANES",
+                serviceHealthyDesc: "Sessions Segures, Sostenibles",
+                serviceHealthyDesc2: "Només esmalts 7-FREE",
+                serviceHealthyList1: "Gel Francès",
+                serviceHealthyList2: "Gel Regular",
+                serviceHealthyList3: "Manicura Natural",
+                serviceHealthyList4: "Qualsevol horari",
+                serviceFirstTitle: "OFERTA PRIMERA VEGADA",
+                serviceFirstDesc: "15% DESCOMPTE PRIMERA VISITA",
+                serviceFirstDesc2: "Benvinguda a Cinnamon",
+                serviceFirstList1: "Prova sense risc",
+                serviceFirstList2: "Experimenta sa",
+                serviceFirstList3: "Uneix-te comunitat",
+                serviceFirstList4: "Només nous clients",
+                bookNow: "Reserva",
+                aboutTitle: "🌿 SOBRE CINNAMON",
+                aboutSubtitle: "Segur. Sostenible. Preciós.",
+                aboutDesc1: "Crem que la bellesa no ha de costar-te la salut.",
+                aboutDesc2: "A Cinnamon, hem prioritzat segur primer - esmalts 7-FREE, removedors suaus, làmpades UV amb filtre. Perquè bellesa sostenible és l'única bellesa.",
+                aboutDesc3: "Entenem que el temps és preciós - per això hem creat sessions Diar Express per professionals ocupats com tu.",
+                aboutDesc4: "Crem en comunitat - per això cada client es converteix en Història Cinnamon, destacada al nostre Instagram i unida per dones recolzant dones.",
+                aboutDesc5: "Uneix-te. La teva salut. El teu temps. La teva història.",
+                value1Title: "✨ Salut Primer",
+                value1Desc: "Només 7-FREE",
+                value2Title: "⏰ Coneixement del Temps",
+                value2Desc: "Opcions express",
+                value3Title: "💙 Comunitat",
+                value3Desc: "Les teves històries importen",
+                value4Title: "🌿 Sostenibilitat",
+                value4Desc: "Productes suaus",
+                aboutImageTitle: "Equip Cinnamon",
+                aboutImageLocation: "Barcelona, Espanya 🇪🇸",
+                testimonialsTitle: "💬 QUÈ DIUEN ELS CLIENTS",
+                testimonialsSubtitle: "Resultats reals. Històries reals.",
+                testimonial1: "\"Al principi era escèptica - ¿ungles en 40 min? Per Cinnamon em va demostrar el contrari. Recullo gel francès que dura 2+ setmanes, tot mentre responc correus.\"",
+                testimonial1Author: "Sarah",
+                testimonial1Role: "Directora Marketing",
+                testimonial2: "\"Mai em vaig donar compte de com tòxic era l'esmalt regular. Les meves unges es sent més fortes, més sanes. Cinnamon em va fer sentir vista.\"",
+                testimonial2Author: "María",
+                testimonial2Role: "Propietària de Negoci",
+                testimonial3: "\"M'encanta que usin esmalts 7-FREE - segurs i encara bonics. ¿I el Diar Express? Game changer.\"",
+                testimonial3Author: "Anna",
+                testimonial3Role: "Professora",
+                contactTitle: "📞 CONTACTE I RESERVA",
+                contactSubtitle: "Llista per unges sanes? Reserva online o contacta'ns directament.",
+                contactWhatsApp: "💬 WhatsApp",
+                contactWhatsAppDesc: "Resposta més ràpida - Reserva directament!",
+                contactWhatsAppBtn: "Reserva WhatsApp",
+                contactWhatsAppHint: "Text: \"Hola! M'agradaria reservar - [Diar Express / Club Ungles Sanes / Regular] - [Horari preferit]\"",
+                contactOnline: "📝 Reserva Online",
+                contactOnlineDesc: "Tipus i horari",
+                contactOnlineBtn: "Reserva Ara",
+                contactOnlineHint: "Rpids - 2 minuts completar",
+                contactEmail: "✉️ Email",
+                contactEmailDesc: "¿Preguntes detallades?",
+                contactEmailBtn: "Email",
+                contactEmailHint: "Resposta: 24 hores",
+                contactInfoTitle: "Ubicació i Horaris",
+                contactLocation: "📍 Ubicació: Barcelona, Espanya 🇪🇸",
+                contactHours: "🕐 Horaris: Dll-Dvs 10:00-20:00 (Exprés 13:00-15:00)",
+                contactPayment: "💳 Pagament: Efectiu, Targeta, Bizum",
+                faqTitle: "❓ PREGUNTES FREQÜENTS",
+                faq1Question: "Quina és la diferència entre Diar Express i Regular?",
+                faq1Answer: "Exprés és 40 minuts (13:00-15:00 només, €60) - perfecte per dinar. Regular és qualsevol horari, 55-60 minuts (€55). Mateixa qualitat, diferent temps.",
+                faq2Question: "Què significa 7-FREE?",
+                faq2Answer: "Els nostres esmalts NO contenen químics tòxics: Formaldehid, Toluen, DBP, Resina Formaldehid, Alcanfor, Etiltosilamida, Xilè. Només alternatives segures.",
+                faq3Question: "Històries Cinnamon és obligatori?",
+                faq3Answer: "¡No! Destaquem clients que opten. La teva privacitat és respectada. Si no vols ser destacada, només avisa'ns - sense problema.",
+                faq4Question: "Oferiu descomptes?",
+                faq4Answer: "Clients primera vegada reben 15% descompte. Membres Històries Cinnamon també reben 15% descompte pròximes visites. Prioritzem lleialitat sobre vendes constants.",
+                faq5Question: "Quant duren les manicures gel?",
+                faq5Answer: "Típicament 3-4 setmanes amb cura adequada. Les nostres sessions més llargues (Club Ungles Sanes) maximitzen durabilitat.",
+                footerExpress: "Diar Express",
+                footerHealthy: "Club Ungles Sanes",
+                footerStories: "Històries Cinnamon",
+                footerServices: "Serveis",
+                footerAbout: "Sobre",
+                footerContact: "Contacte",
+                footerCopyright: "© 2026 Cinnamon Nails Studio. Tots els drets reservats. | Barcelona, Espanya 🇪🇸"
+            },
+            en: {
+                heroTitle: "CINNAMON NAILS STUDIO",
+                heroSubtitle: "Healthy Nails. Sustainably Crafted. Express for Busy Professionals.",
+                heroDescription: "7-FREE polishes • 40-minute express sessions • Every client becomes a storyteller",
+                ctaPrimary: "👉 BOOK YOUR EXPRESS LUNCH BREAK (40 MIN)",
+                badge1: "50+ Happy Clients Featured",
+                badge2: "15% Off First Visit",
+                badge3: "Barcelona, Spain 🇪🇸",
+                expressTitle: "🕐 EXPRESS LUNCH BREAK",
+                expressSubtitle: "Get gorgeous nails in 40 minutes. Perfect for lunch break.",
+                expressDesc: "Busy professional? We get it. Time poverty is real. But you deserve beautiful nails too.",
+                expressPoint1: "Perfect for lunch break (60 min session = 20 min buffer)",
+                expressPoint2: "Walk-in ready (no waiting)",
+                expressPoint3: "Wi-Fi included (work while we work)",
+                expressPoint4: "Coffee/tea on the house",
+                expressPoint5: "Quality that rivals hour-long sessions",
+                expressHours: "Hours: 13:00-15:00 WEEKDAYS ONLY",
+                expressSlots: "8 Daily Slots (Book Early!)",
+                expressPricing: "<strong>€60 (Express) | €55 (Regular)</strong>",
+                expressCta: "👉 BOOK YOUR LUNCH BREAK SLOT",
+                expressImageAlt: "Professional • Efficient • Beautiful",
+                healthyTitle: "🌿 HEALTHY NAILS CLUB",
+                healthySubtitle: "Beauty shouldn't cost your health. Safe, sustainable, stunning.",
+                healthyIntro: "At Cinnamon, we use only 7-FREE polishes and gentle removers.",
+                healthyTestimonial: "\"My nails feel stronger, healthier, and I finally can get long sessions without cracking.\"",
+                healthyTestimonialAuthor: "Happy Healthy Nails Club Member",
+                healthyCta: "👉 JOIN THE HEALTHY NAILS CLUB",
+                storiesTitle: "📸 CINNAMON STORIES",
+                storiesSubtitle: "Every client becomes a storyteller. 50+ clients featured already. Your turn next.",
+                story1Title: "Maria's Transformation",
+                story1Subtitle: "From damaged to healthy",
+                story2Title: "Sarah's Journey",
+                story2Subtitle: "40-minute express champion",
+                story3Title: "Anna's Story",
+                story3Subtitle: "Healthy Nails Club member",
+                storiesCta: "👉 BOOK YOUR SESSION - YOUR STORY AWAITS",
+                servicesTitle: "💅 SERVICES & PRICING",
+                servicesSubtitle: "Transparent pricing. No surprises.",
+                serviceExpressTitle: "EXPRESS LUNCH BREAK",
+                serviceExpressDesc: "40-Minute Session",
+                serviceExpressDesc2: "Perfect for busy professionals",
+                serviceExpressList1: "French Gel",
+                serviceExpressList2: "Regular Gel",
+                serviceExpressList3: "Express Service",
+                serviceExpressList4: "Book 13:00-15:00",
+                serviceHealthyTitle: "HEALTHY NAILS CLUB",
+                serviceHealthyDesc: "Safe, Sustainable Sessions",
+                serviceHealthyDesc2: "7-FREE polishes only",
+                serviceHealthyList1: "French Gel",
+                serviceHealthyList2: "Regular Gel",
+                serviceHealthyList3: "Natural Manicure",
+                serviceHealthyList4: "Anytime slots",
+                serviceFirstTitle: "FIRST TIME OFFER",
+                serviceFirstDesc: "15% OFF FIRST VISIT",
+                serviceFirstDesc2: "Welcome to Cinnamon!",
+                serviceFirstList1: "Try risk-free",
+                serviceFirstList2: "Experience healthy",
+                serviceFirstList3: "Join community",
+                serviceFirstList4: "New clients only",
+                bookNow: "Book",
+                aboutTitle: "🌿 ABOUT CINNAMON",
+                aboutSubtitle: "Safe. Sustainable. Stunning.",
+                aboutDesc1: "We believe beauty shouldn't cost your health.",
+                aboutDesc2: "At Cinnamon, we prioritized safety first - 7-FREE polishes, gentle removers, and UV filter lamps. Because sustainable beauty is the only beauty.",
+                aboutDesc3: "We understand time is precious - that's why we created Express Lunch Break sessions for busy professionals like you.",
+                aboutDesc4: "We believe in community - that's why every client becomes a Cinnamon Story, featured on our Instagram and joined by women supporting women.",
+                aboutDesc5: "Join us. Your health. Your time. Your story.",
+                value1Title: "✨ Health First",
+                value1Desc: "7-FREE only",
+                value2Title: "⏰ Time Conscious",
+                value2Desc: "Express options",
+                value3Title: "💙 Community",
+                value3Desc: "Your stories matter",
+                value4Title: "🌿 Sustainability",
+                value4Desc: "Gentle products",
+                aboutImageTitle: "Cinnamon Team",
+                aboutImageLocation: "Barcelona, Spain 🇪🇸",
+                testimonialsTitle: "💬 WHAT CLIENTS SAY",
+                testimonialsSubtitle: "Real results. Real stories.",
+                testimonial1: "\"At first I was skeptical - nails in 40 min? But Cinnamon proved me wrong. I get French gel that lasts 2+ weeks, all while answering emails.\"",
+                testimonial1Author: "Sarah",
+                testimonial1Role: "Marketing Executive",
+                testimonial2: "\"I never realized how toxic regular polish was. My nails feel stronger, healthier. Cinnamon made me feel seen.\"",
+                testimonial2Author: "Maria",
+                testimonial2Role: "Business Owner",
+                testimonial3: "\"I love that they use 7-FREE polishes - safe and still beautiful. And the Express Lunch Break? Game changer.\"",
+                testimonial3Author: "Anna",
+                testimonial3Role: "Teacher",
+                contactTitle: "📞 CONTACT & BOOKING",
+                contactSubtitle: "Ready for healthy nails? Book online or message us directly.",
+                contactWhatsApp: "💬 WhatsApp Us",
+                contactWhatsAppDesc: "Fastest response - Book directly!",
+                contactWhatsAppBtn: "WhatsApp Booking",
+                contactWhatsAppHint: "Text: \"Hi! I'd like to book - [Express Lunch Break / Healthy Nails Club / Regular] - [Preferred time]\"",
+                contactOnline: "📝 Online Booking",
+                contactOnlineDesc: "Choose type & time",
+                contactOnlineBtn: "Book Now",
+                contactOnlineHint: "Quick - 2 minutes to complete",
+                contactEmail: "✉️ Email Us",
+                contactEmailDesc: "Detailed questions?",
+                contactEmailBtn: "Email Us",
+                contactEmailHint: "Response: 24 hours",
+                contactInfoTitle: "Location & Hours",
+                contactLocation: "📍 Location: Barcelona, Spain 🇪🇸",
+                contactHours: "🕐 Hours: Mon-Fri 10:00-20:00 (Express 13:00-15:00)",
+                contactPayment: "💳 Payment: Cash, Card, Bizum",
+                faqTitle: "❓ FREQUENTLY ASKED QUESTIONS",
+                faq1Question: "What's the difference between Express Lunch Break and Regular?",
+                faq1Answer: "Express is 40 minutes (13:00-15:00 only, €60) - perfect for lunch. Regular is anytime, 55-60 minutes (€55). Same quality, different time.",
+                faq2Question: "What does 7-FREE mean?",
+                faq2Answer: "Our polishes contain NO toxic chemicals: Formaldehyde, Toluene, DBP, Formaldehyde Resin, Camphor, Ethyl Tosylamide, Xylene. Safe alternatives only.",
+                faq3Question: "Is Cinnamon Stories compulsory?",
+                faq3Answer: "No! We feature clients who opt-in. Your privacy is respected. If you don't want featured, just let us know - no problem.",
+                faq4Question: "Do you offer discounts?",
+                faq4Answer: "First-time clients get 15% off. Cinnamon Stories members also get 15% off next visits. We prioritize loyalty over constant sales.",
+                faq5Question: "How long do gel manicures last?",
+                faq5Answer: "Typically 3-4 weeks with proper care. Our longer sessions (Healthy Nails Club) maximize longevity.",
+                footerExpress: "Express Lunch Break",
+                footerHealthy: "Healthy Nails Club",
+                footerStories: "Cinnamon Stories",
+                footerServices: "Services",
+                footerAbout: "About",
+                footerContact: "Contact",
+                footerCopyright: "© 2026 Cinnamon Nails Studio. All rights reserved. | Barcelona, Spain 🇪🇸"
+            }
+        };
+
+        // Change Language Function
+        function changeLanguage() {
+            const lang = document.getElementById('langSelect').value;
+            const elements = document.querySelectorAll('[data-lang]');
+
+            elements.forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
         // FAQ Toggle
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
@@ -1047,6 +1302,9 @@
                 }
             });
         });
+
+        // Initialize with Spanish
+        changeLanguage();
     </script>
 </body>
 </html>
