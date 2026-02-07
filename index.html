@@ -143,9 +143,28 @@
         }
 
         .hero h1 {
-            color: var(--white);
+            color: var(--cinnamon-dark);
             margin-bottom: 1rem;
-            font-size: 3.5rem;
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .hero h1.main-title {
+            font-size: 4rem;
+            line-height: 1.1;
+        }
+
+        .hero h1 .beauty {
+            display: block;
+            font-size: 2.5rem;
+            margin-top: 0.5rem;
+            color: var(--cinnamon);
+            letter-spacing: 4px;
+        }
+
+        body {
+            font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
         }
 
         .hero-cta {
@@ -527,6 +546,14 @@
                 font-size: 2.25rem;
             }
 
+            .hero h1.main-title {
+                font-size: 2.25rem;
+            }
+
+            .hero h1 .beauty {
+                font-size: 1.5rem;
+            }
+
             .express-grid,
             .about-grid {
                 grid-template-columns: 1fr;
@@ -566,7 +593,7 @@
     <!-- HERO SECTION -->
     <section class="hero" id="hero">
         <div class="hero-content">
-            <h1 data-lang="heroTitle">CINNAMON NAILS STUDIO</h1>
+            <h1 class="main-title" data-lang="heroTitle">CINNAMON NAILS <span class="beauty">& Beauty</span></h1>
             <p class="subheadline" data-lang="heroSubtitle">Healthy Nails. Sustainably Crafted. Express for Busy Professionals.</p>
             <p data-lang="heroDescription">7-FREE polishes • 40-minute express sessions • Every client becomes a storyteller</p>
 
