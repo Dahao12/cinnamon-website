@@ -620,8 +620,8 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
 
         /* Footer */
         footer {
-            background: var(--cinnamon-dark);
-            color: var(--white);
+            background: var(--cinnamon-pale);
+            color: var(--gray-dark);
             padding: 3rem 1.5rem 1rem;
         }
 
@@ -694,6 +694,16 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.875rem;
             color: var(--cinnamon-light);
+        }
+
+        .footer-reservation {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .footer-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(181, 135, 88, 0.3);
         }
 
         /* Responsive Design */
@@ -806,9 +816,6 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
     <header id="header">
         <nav class="container">
             <a href="#" class="logo">Cinnamon <span>Nails</span></a>
-            <div class="nav-cta-wrapper">
-                <a href="https://www.fresha.com/book-now/cinnamon-nails-y2ip4l56/all-offer?share=true?pId=2783306" target="_blank" class="cta-button nav-text nav-cta-button" data-key="reserva" style="background: var(--cinnamon) !important; color: white !important; font-weight: 700; padding: 0.7rem 1.5rem; display: inline-block !important; visibility: visible !important; margin-left: 1rem;">Reserva</a>
-            </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio" class="nav-text" data-key="inicio">Inicio</a></li>
                 <li><a href="#servicios" class="nav-text" data-key="servicios">Servicios</a></li>
@@ -1244,6 +1251,9 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                         <li><a href="#">Cookies</a></li>
                     </ul>
                 </div>
+            </div>
+            <div class="footer-reservation">
+                <a href="https://www.fresha.com/book-now/cinnamon-nails-y2ip4l56/all-offer?share=true?pId=2783306" target="_blank" class="footer-cta-button nav-text" data-key="reserva" style="background: var(--cinnamon); padding: 0.8rem 2rem; border-radius: var(--border-radius); color: white; text-decoration: none; display: inline-block; font-weight: 500; transition: var(--transition);">Reserva Tu Cita</a>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Cinnamon Nails Studio Barcelona. Todos los derechos reservados.</p>
