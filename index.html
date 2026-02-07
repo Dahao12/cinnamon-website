@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinnamon Nails Studio - Healthy Nails | Express Service Barcelona</title>
+    <meta name="description" content="Cinnamon Nails Barcelona - 7-FREE polishes, 40-minute express lunch break for busy professionals. Safe, sustainable, stunning nails.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cinnamon: #B58758;
+            --cinnamon-light: #E8D4C4;
+            --cinnamon-dark: #8B6342;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F5;
+            --gray-medium: #666666;
+            --gray-dark: #333333;
+            --green-health: #7AB9A8;
+            --orange-express: #E8A846;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--gray-dark);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--cinnamon-dark);
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--cinnamon);
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(181, 135, 88, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--cinnamon-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(181, 135, 88, 0.5);
+        }
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--cinnamon);
+            border: 2px solid var(--cinnamon);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--cinnamon);
+            color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=1200&h=800&fit=crop') center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            padding: 3rem 1.5rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 3.5rem;
+        }
+
+        .hero .subheadline {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .hero .social-proof {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* EXPRESS SECTION */
+        .express {
+            background-color: var(--white);
+        }
+
+        .express-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .express-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .express-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .express-list li:last-child {
+            border-bottom: none;
+        }
+
+        .express-image {
+            background: linear-gradient(135deg, var(--cinnamon-light), var(--white));
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .express-pricing {
+            background: var(--gray-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        /* HEALTHY NAILS SECTION */
+        .healthy {
+            background: linear-gradient(135deg, var(--cinnamon-light), var(--white));
+        }
+
+        .healthy-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .healthy-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .healthy-item .check {
+            color: var(--green-health);
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .healthy-item .cross {
+            color: var(--orange-express);
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--cinnamon);
+        }
+
+        /* STORIES SECTION */
+        .stories {
+            background-color: var(--white);
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .story-card {
+            background: var(--gray-light);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            z-index: 1;
+        }
+
+        .story-content {
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+        }
+
+        .content-box {
+            background: var(--cinnamon-light);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .step h4 {
+            color: var(--cinnamon);
+            margin-bottom: 0.5rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .benefit {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid var(--cinnamon-light);
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            background-color: var(--gray-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            text-align: center;
+            border-top: 4px solid var(--cinnamon);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cinnamon);
+            margin: 1rem 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .service-card.featured {
+            background: linear-gradient(135deg, var(--white), var(--cinnamon-light));
+            transform: scale(1.05);
+        }
+
+        .service-card.featured:hover {
+            transform: scale(1.07) translateY(-5px);
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--cinnamon-light), var(--white));
+            border-radius: 12px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            color: var(--cinnamon-dark);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .value-item {
+            background: var(--gray-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .value-item h4 {
+            color: var(--cinnamon);
+            font-size: 1.125rem;
+        }
+
+        /* TESTIMONIALS SECTION */
+        .testimonials {
+            background: linear-gradient(135deg, var(--cinnamon-light), var(--white));
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--cinnamon);
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--cinnamon-dark);
+            margin-top: 1rem;
+        }
+
+        .testimonial-role {
+            font-size: 0.875rem;
+            color: var(--gray-medium);
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            background-color: var(--cinnamon-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: var(--cinnamon);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            background: var(--gray-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+        }
+
+        /* FAQ SECTION */
+        .faq {
+            background-color: var(--white);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--gray-light);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            padding: 1rem;
+            background: var(--gray-light);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .faq-answer {
+            padding: 0 1rem;
+            display: none;
+            color: var(--gray-medium);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            background: var(--cinnamon-light);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--gray-dark);
+            color: var(--white);
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--cinnamon);
+        }
+
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-badge {
+            background: var(--cinnamon);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+
+        .copyright {
+            color: var(--gray-medium);
+            font-size: 0.875rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-cta .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .express-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .express-image,
+            .about-image {
+                height: 250px;
+            }
+
+            .service-card.featured {
+                transform: none;
+            }
+
+            .service-card.featured:hover {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>CINNAMON NAILS STUDIO</h1>
+            <p class="subheadline">Healthy Nails. Sustainably Crafted. Express for Busy Professionals.</p>
+            <p style="margin-bottom: 2rem;">7-FREE polishes • 40-minute express sessions • Every client becomes a storyteller</p>
+
+            <div class="hero-cta">
+                <a href="#booking" class="btn btn-primary">👉 BOOK YOUR EXPRESS LUNCH BREAK (40 MIN)</a>
+                <a href="#services" class="btn btn-secondary" style="color: white; border-color: white;">View Services</a>
+            </div>
+
+            <div class="social-proof">
+                <span class="badge">50+ Happy Clients Featured</span>
+                <span class="badge">15% Off First Visit</span>
+                <span class="badge">Barcelona, Spain 🇪🇸</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPRESS LUNCH BREAK -->
+    <section class="express" id="express">
+        <div class="container">
+            <h2>🕐 EXPRESS LUNCH BREAK</h2>
+            <p>Get gorgeous nails in 40 minutes. Perfect for lunch break.</p>
+
+            <div class="express-grid">
+                <div>
+                    <p style="margin-bottom: 1.5rem;">Busy professional? We get it. Time poverty is real. But you deserve beautiful nails too.</p>
+
+                    <ul class="express-list">
+                        <li>✅ Perfect for lunch break (60 min session = 20 min buffer)</li>
+                        <li>✅ Walk-in ready (no waiting)</li>
+                        <li>✅ Wi-Fi included (work while we work)</li>
+                        <li>✅ Coffee/tea on the house</li>
+                        <li>✅ Quality that rivals hour-long sessions</li>
+                    </ul>
+
+                    <div class="express-pricing">
+                        <h3>Hours: 13:00-15:00 WEEKDAYS ONLY</h3>
+                        <p>8 Daily Slots (Book Early!)</p>
+                        <p style="margin-top: 1rem;"><strong>€60 (Express) | €55 (Regular)</strong></p>
+                    </div>
+
+                    <a href="#booking" class="btn btn-primary">👉 BOOK YOUR LUNCH BREAK SLOT</a>
+                </div>
+
+                <div class="express-image">
+                    <div style="text-align: center; color: var(--cinnamon-dark);">
+                        <p style="font-size: 5rem; line-height: 1;">👠</p>
+                        <p>Professional • Efficient • Beautiful</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HEALTHY NAILS CLUB -->
+    <section class="healthy" id="healthy">
+        <div class="container">
+            <h2>🌿 HEALTHY NAILS CLUB</h2>
+            <p>Beauty shouldn't cost your health. Safe, sustainable, stunning.</p>
+
+            <p style="margin: 2rem 0;">At Cinnamon, we use only 7-FREE polishes and gentle removers.</p>
+
+            <div class="healthy-list">
+                <div class="healthy-item">
+                    <p class="cross">✗ Formaldehyde</p>
+                    <p class="check">✓ Clean alternatives</p>
+                </div>
+                <div class="healthy-item">
+                    <p class="cross">✗ Toluene</p>
+                    <p class="check">✓ Safe for sensitive skin</p>
+                </div>
+                <div class="healthy-item">
+                    <p class="cross">✗ DBP</p>
+                    <p class="check">✓ Pregnant-friendly</p>
+                </div>
+                <div class="healthy-item">
+                    <p class="cross">✗ Formaldehyde Resin</p>
+                    <p class="check">✓ No harsh chemicals</p>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3>What You Get:</h3>
+                <div class="steps">
+                    <div class="step">
+                        <h4>7-FREE Polishes</h4>
+                        <p>No toxins above</p>
+                    </div>
+                    <div class="step">
+                        <h4>Gentle Removers</h4>
+                        <p>Avocado & soy-based</p>
+                    </div>
+                    <div class="step">
+                        <h4>UV Filters</h4>
+                        <p>Exposure protection</p>
+                    </div>
+                    <div class="step">
+                        <h4>Education</h4>
+                        <p>Healthy nail routines</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-box">
+                <p>"My nails feel stronger, healthier, and I finally can get long sessions without cracking."</p>
+                <p class="testimonial-author">Happy Healthy Nails Club Member</p>
+            </div>
+
+            <a href="#booking" class="btn btn-primary">👉 JOIN THE HEALTHY NAILS CLUB</a>
+        </div>
+    </section>
+
+    <!-- CINNAMON STORIES -->
+    <section class="stories" id="stories">
+        <div class="container">
+            <h2>📸 CINNAMON STORIES</h2>
+            <p>Every client becomes a storyteller. 50+ clients featured already. Your turn next.</p>
+
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-content">
+                        <h4>Maria's Transformation</h4>
+                        <p>From damaged to healthy</p>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-content">
+                        <h4>Sarah's Journey</h4>
+                        <p>40-minute express champion</p>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-content">
+                        <h4>Anna's Story</h4>
+                        <p>Healthy Nails Club member</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3>How It Works:</h3>
+                <div class="steps">
+                    <div class="step">
+                        <h4>1️⃣ Capture</h4>
+                        <p>We photograph your nails</p>
+                    </div>
+                    <div class="step">
+                        <h4>2️⃣ Feature</h4>
+                        <p>Share on our Instagram</p>
+                    </div>
+                    <div class="step">
+                        <h4>3️⃣ Tag</h4>
+                        <p>Tag you + share your story</p>
+                    </div>
+                    <div class="step">
+                        <h4>4️⃣ Reward</h4>
+                        <p>Get 15% off next visit</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <h4>📸 Free Photography</h4>
+                    <p>Professional nail shots</p>
+                </div>
+                <div class="benefit">
+                    <h4>🏷️ Social Proof</h4>
+                    <p>Feature on our IG</p>
+                </div>
+                <div class="benefit">
+                    <h4>💬 Community</h4>
+                    <p>Join our family</p>
+                </div>
+                <div class="benefit">
+                    <h4>🎁 15% Discount</h4>
+                    <p>Incentive for stories</p>
+                </div>
+            </div>
+
+            <a href="#booking" class="btn btn-primary">👉 BOOK YOUR SESSION - YOUR STORY AWAITS</a>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>💅 SERVICES & PRICING</h2>
+            <p>Transparent pricing. No surprises.</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>EXPRESS LUNCH BREAK</h3>
+                    <p>40-Minute Session</p>
+                    <p>Perfect for busy professionals</p>
+                    <div class="service-price">€60</div>
+                    <ul>
+                        <li>French Gel</li>
+                        <li>Regular Gel</li>
+                        <li>Express Service</li>
+                        <li>Book 13:00-15:00</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-primary">Book</a>
+                </div>
+
+                <div class="service-card featured">
+                    <h3>HEALTHY NAILS CLUB</h3>
+                    <p>Safe, Sustainable Sessions</p>
+                    <p>7-FREE polishes only</p>
+                    <div class="service-price">€55</div>
+                    <ul>
+                        <li>French Gel</li>
+                        <li>Regular Gel</li>
+                        <li>Natural Manicure</li>
+                        <li>Anytime slots</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-primary">Book</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>FIRST TIME OFFER</h3>
+                    <p>15% OFF FIRST VISIT</p>
+                    <p>Welcome to Cinnamon!</p>
+                    <div class="service-price">€46.75</div>
+                    <ul>
+                        <li>Try risk-free</li>
+                        <li>Experience healthy</li>
+                        <li>Join community</li>
+                        <li>New clients only</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-primary">Book</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>🌿 ABOUT CINNAMON</h2>
+            <p>Safe. Sustainable. Stunning.</p>
+
+            <div class="about-grid">
+                <div>
+                    <p style="margin-bottom: 1.5rem;">We believe beauty shouldn't cost your health.</p>
+                    <p>At Cinnamon, we prioritized safety first - 7-FREE polishes, gentle removers, and UV filter lamps. Because sustainable beauty is the only beauty.</p>
+                    <p style="margin: 1.5rem 0;">We understand time is precious - that's why we created Express Lunch Break sessions for busy professionals like you.</p>
+                    <p>We believe in community - that's why every client becomes a Cinnamon Story, featured on our Instagram and joined by women supporting women.</p>
+                    <p style="margin-top: 1.5rem; font-weight: 500;">Join us. Your health. Your time. Your story.</p>
+
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <h4>✨ Health First</h4>
+                            <p>7-FREE only</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>⏰ Time Conscious</h4>
+                            <p>Express options</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>💙 Community</h4>
+                            <p>Your stories matter</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>🌿 Sustainability</h4>
+                            <p>Gentle products</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <div style="text-align: center;">
+                        <p style="font-size: 4rem; line-height: 1;">💅</p>
+                        <p style="margin-bottom: 0.5rem;"><strong>Cinnamon Team</strong></p>
+                        <p>Barcelona, Spain 🇪🇸</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>💬 WHAT CLIENTS SAY</h2>
+            <p>Real results. Real stories.</p>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"At first I was skeptical - nails in 40 min? But Cinnamon proved me wrong. I get French gel that lasts 2+ weeks, all while answering emails."</p>
+                    <p class="testimonial-author">Sarah</p>
+                    <p class="testimonial-role">Marketing Executive</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>"I never realized how toxic regular polish was. My nails feel stronger, healthier. Cinnamon made me feel seen."</p>
+                    <p class="testimonial-author">Maria</p>
+                    <p class="testimonial-role">Business Owner</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>"I love that they use 7-FREE polishes - safe and still beautiful. And the Express Lunch Break? Game changer."</p>
+                    <p class="testimonial-author">Anna</p>
+                    <p class="testimonial-role">Teacher</p>
+                </div>
+            </div>
+
+            <a href="#booking" class="btn btn-primary">👉 JOIN OUR HAPPY CLIENTS</a>
+        </div>
+    </section>
+
+    <!-- CONTACT & BOOKING -->
+    <section class="contact" id="booking">
+        <div class="container">
+            <h2>📞 CONTACT & BOOKING</h2>
+            <p>Ready for healthy nails? Book online or message us directly.</p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>💬 WhatsApp Us</h3>
+                    <p>Fastest response - Book directly!</p>
+                    <a href="https://wa.me/34000000000" target="_blank" class="btn btn-primary">WhatsApp Booking</a>
+                    <p style="margin-top: 1rem; font-size: 0.875rem;">Text: "Hi! I'd like to book - [Express Lunch Break / Healthy Nails Club / Regular] - [Preferred time]"</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>📝 Online Booking</h3>
+                    <p>Choose type & time</p>
+                    <a href="https://wa.me/34000000000" target="_blank" class="btn btn-primary">Book Now</a>
+                    <p style="margin-top: 1rem; font-size: 0.875rem;">Quick - 2 minutes to complete</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>✉️ Email Us</h3>
+                    <p>Detailed questions?</p>
+                    <a href="mailto:hello@cinnamonnails.com" class="btn btn-primary">Email Us</a>
+                    <p style="margin-top: 1rem; font-size: 0.875rem;">Response: 24 hours</p>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h3 style="margin-bottom: 1rem;">Location & Hours</h3>
+                <p>📍 Location: Barcelona, Spain 🇪🇸</p>
+                <p>🕐 Hours: Mon-Fri 10:00-20:00 (Express 13:00-15:00)</p>
+                <p>💳 Payment: Cash, Card, Bizum</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>❓ FREQUENTLY ASKED QUESTIONS</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">What's the difference between Express Lunch Break and Regular?</div>
+                <div class="faq-answer">
+                    Express is 40 minutes (13:00-15:00 only, €60) - perfect for lunch. Regular is anytime, 55-60 minutes (€55). Same quality, different time.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What does 7-FREE mean?</div>
+                <div class="faq-answer">
+                    Our polishes contain NO toxic chemicals: Formaldehyde, Toluene, DBP, Formaldehyde Resin, Camphor, Ethyl Tosylamide, Xylene. Safe alternatives only.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is Cinnamon Stories compulsory?</div>
+                <div class="faq-answer">
+                    No! We feature clients who opt-in. Your privacy is respected. If you don't want featured, just let us know - no problem.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you offer discounts?</div>
+                <div class="faq-answer">
+                    First-time clients get 15% off. Cinnamon Stories members also get 15% off next visits. We prioritize loyalty over constant sales.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How long do gel manicures last?</div>
+                <div class="faq-answer">
+                    Typically 3-4 weeks with proper care. Our longer sessions (Healthy Nails Club) maximize longevity.
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem;"><a href="#booking" style="color: var(--cinnamon); text-decoration: none; font-weight: 500;">Still have questions? 💬 Message us on WhatsApp</a></p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#express">Express Lunch Break</a>
+                <a href="#healthy">Healthy Nails Club</a>
+                <a href="#stories">Cinnamon Stories</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#booking">Contact</a>
+            </div>
+
+            <div class="footer-badges">
+                <span class="footer-badge">💙 Healthy Nails Club</span>
+                <span class="footer-badge">⏰ Express Lunch Break</span>
+                <span class="footer-badge">📸 Cinnamon Stories</span>
+            </div>
+
+            <p class="copyright">© 2026 Cinnamon Nails Studio. All rights reserved. | Barcelona, Spain 🇪🇸</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
