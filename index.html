@@ -653,75 +653,6 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             color: var(--cinnamon-light);
         }
 
-        /* Booking Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.6);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            animation: slideIn 0.3s ease;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--gray-medium);
-        }
-
-        .booking-info {
-            text-align: center;
-        }
-
-        .booking-info h3 {
-            margin-bottom: 1rem;
-        }
-
-        .booking-details {
-            background: var(--cinnamon-pale);
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            margin: 1.5rem 0;
-        }
-
-        .booking-details p {
-            margin: 0.5rem 0;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero-content {
@@ -798,7 +729,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-            <a href="#" class="cta-button" onclick="openBooking()">Reserva</a>
+            <a href="https://www.fresha.com/book-now/cinnamon-nails-y2ip4l56/all-offer?share=true&pId=2783306" target="_blank" class="cta-button">Reserva</a>
         </nav>
     </header>
 
@@ -825,7 +756,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                     </div>
                 </div>
                 
-                <a href="#" class="cta-button" onclick="openBooking()">Reserva Tu Cita</a>
+                <a href="https://www.fresha.com/book-now/cinnamon-nails-y2ip4l56/all-offer?share=true&pId=2783306" target="_blank" class="cta-button">Reserva Tu Cita</a>
             </div>
             <div class="hero-image">
                 <img src="work-1.jpg" alt="Cinnamon Nails - Salón de uñas elegante en Barcelona">
@@ -1215,29 +1146,6 @@ e - Cinnamon Nails">
         </div>
     </footer>
 
-    <!-- Booking Modal -->
-    <div class="modal" id="bookingModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeBooking()">×</button>
-            <div class="booking-info">
-                <h3>📅 Reserva Tu Cita</h3>
-                <p>Completa el formulario o contáctanos directamente:</p>
-                <div class="booking-details">
-                    <p><strong>📍 Dirección:</strong><br>Travessera de Gràcia 415, Local 1<br>08025 Barcelona</p>
-                    <p><strong>📞 Teléfono:</strong><br>641 717 985</p>
-                    <p><strong>📧 Email:</strong><br>cinnamonnails.sf@gmail.com</p>
-                    <p><strong>💰 Pago anticipado reserva:</strong><br>€7 (deducible de la cita)</p>
-                </div>
-                <a href="https://wa.me/34641717985" target="_blank" class="cta-button btn-whatsapp">
-                    Reservar por WhatsApp
-                </a>
-                <a href="tel:+34641717985" class="cta-button btn-call" style="margin-top: 1rem; display: inline-block;">
-                    Llamar Ahora
-                </a>
-            </div>
-        </div>
-    </div>
-
     <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -1271,24 +1179,6 @@ e - Cinnamon Nails">
                     navLinks.classList.remove('active');
                 }
             });
-        });
-
-        // Booking modal
-        function openBooking() {
-            document.getElementById('bookingModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeBooking() {
-            document.getElementById('bookingModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal on outside click
-        document.getElementById('bookingModal').addEventListener('click', (e) => {
-            if (e.target.id === 'bookingModal') {
-                closeBooking();
-            }
         });
 
         // Contact form submission
