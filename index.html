@@ -185,6 +185,10 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             color: var(--gray-medium);
         }
 
+        .nav-cta-wrapper {
+            margin-left: 1rem;
+        }
+
         /* Hero Section */
         .hero {
             padding-top: 80px;
@@ -781,11 +785,11 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
         <nav class="container">
             <a href="#" class="logo">Cinnamon <span>Nails</span></a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#fidelidad">Fidelidad</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#inicio" class="nav-text" data-key="inicio">Inicio</a></li>
+                <li><a href="#servicios" class="nav-text" data-key="servicios">Servicios</a></li>
+                <li><a href="#galeria" class="nav-text" data-key="galeria">Galería</a></li>
+                <li><a href="#fidelidad" class="nav-text" data-key="fidelidad">Fidelidad</a></li>
+                <li><a href="#contacto" class="nav-text" data-key="contacto">Contacto</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
             <div class="language-selector" id="languageSelector">
@@ -795,7 +799,9 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 <span class="lang-divider"></span>
                 <button class="lang-btn" data-lang="ca">🇪🇺 CA</button>
             </div>
-            <a href="https://www.fresha.com/book-now/cinnamon-nails-y2ip4l56/all-offer?share=true&pId=2783306" target="_blank" class="cta-button">Reserva</a>
+            <div class="nav-cta-wrapper">
+                <a href="https://www.fresha.com/book-now/cinnamon-nails-y2ip4l56/all-offer?share=true&pId=2783306" target="_blank" class="cta-button nav-text" data-key="reserva">Reserva</a>
+            </div>
         </nav>
     </header>
 
@@ -809,7 +815,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 
                 <div class="hero-stats">
                     <div class="stat">
-                        <div class="stat-value">4.8★</div>
+                        <div class="stat-value">5★</div>
                         <div class="stat-label">Valoraciones</div>
                     </div>
                     <div class="stat">
@@ -828,7 +834,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 <img src="hero-image.jpg" alt="Cinnamon Nails - Salón de uñas elegante en Barcelona">
                 <div class="trust-badge">
                     <div class="stars">★★★★★</div>
-                    <p>5.0 en Google Maps</p>
+                    <p>4.8 en Google Maps</p>
                 </div>
             </div>
         </div>
@@ -1232,7 +1238,133 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             navLinks.classList.toggle('active');
         });
 
-        // Language switcher
+        // Language switcher with complete translations
+        const translations = {
+            es: {
+                inicio: 'Inicio',
+                servicios: 'Servicios',
+                galeria: 'Galería',
+                fidelidad: 'Fidelidad',
+                contacto: 'Contacto',
+                reserva: 'Reserva',
+                hero_subtitle: '✨ Uñas Saludables & Belleza Natural ✨',
+                hero_title: 'Tu Momento de Belleza en Barcelona',
+                hero_description: 'Disfruta de nuestros servicios profesionales en un salón acogedor, con buena energía y un ambiente pensado para ti. Desde manicuras y tratamientos especializados hasta cuidados completos para tus uñas, encontrarás todo lo necesario para sentirte bien, relajarte y lucir impecable.',
+                stat_valoraciones: 'Valoraciones',
+                stat_experiencia: 'Experiencia',
+                stat_express: 'Express',
+                hero_cta: 'Reserva Tu Cita',
+                why_choose_us: '✨ Uñas hermosas, saludables y auténticas',
+                feature_1_title: 'Cuidado & belleza',
+                feature_1_desc: 'Tus uñas reciben lo mejor: productos libres de tóxicos, seguros y pensados para tu salud.',
+                feature_2_title: 'Servicio ágil y profesional',
+                feature_2_desc: 'Nos adaptamos a tu ritmo y necesidades. Cada trabajo se realiza con cuidado, sin prisas innecesarias, pero siempre con eficiencia.',
+                feature_3_title: 'Resultados que inspiran',
+                feature_3_desc: 'Cada clienta brilla con estilo propio. Creamos contenido auténtico que muestra resultados reales y listos para compartir.',
+                section_services: 'Nuestros Servicios',
+                section_services_subtitle: 'Calidad profesional con precios accesibles',
+                manicura: 'Manicura',
+                manicura_desc: 'Manicura profesional con productos de alta calidad y técnica experta.',
+                pedicura: 'Pedicura',
+                pedicura_desc: 'Pedicura profesional para relajarte y embellecer tus pies.',
+                beauty: 'Beauty & Depilación',
+                beauty_desc: 'Tratamientos de belleza y depilación profesional en Barcelona.',
+                section_gallery: 'Nuestra Galería',
+                section_gallery_subtitle: 'Resultados reales de nuestras clientas',
+                section_contact: 'Contacto',
+                contact_name: 'Nombre',
+                contact_email: 'Email',
+                contact_phone: 'Teléfono *',
+                contact_service: 'Servicio de interés',
+                contact_message: 'Mensaje',
+                contact_send: 'Enviar Mensaje',
+                contact_alert: '¡Gracias por tu mensaje! Se abrirá tu cliente de correo para enviar el mensaje a Cinnamon Nails.',
+                trust_badge: '4.8 en Google Maps'
+            },
+            en: {
+                inicio: 'Home',
+                servicios: 'Services',
+                galeria: 'Gallery',
+                fidelidad: 'Loyalty',
+                contacto: 'Contact',
+                reserva: 'Book',
+                hero_subtitle: '✨ Healthy Nails & Natural Beauty ✨',
+                hero_title: 'Your Beauty Moment in Barcelona',
+                hero_description: 'Enjoy our professional services in a cozy salon with good energy and an environment designed for you. From manicures and specialized treatments to complete nail care, you will find everything you need to feel good, relaxed, and look impeccable.',
+                stat_valoraciones: 'Reviews',
+                stat_experiencia: 'Experience',
+                stat_express: 'Express',
+                hero_cta: 'Book Your Appointment',
+                why_choose_us: '✨ Beautiful, Healthy & Authentic Nails',
+                feature_1_title: 'Care & Beauty',
+                feature_1_desc: 'Your nails receive the best: non-toxic, safe products designed for your health.',
+                feature_2_title: 'Agile & Professional Service',
+                feature_2_desc: 'We adapt to your pace and needs. Each job is done with care, without unnecessary haste, but always with efficiency.',
+                feature_3_title: 'Results that Inspire',
+                feature_3_desc: 'Each client shines with their own style. We create authentic content that shows real results ready to share.',
+                section_services: 'Our Services',
+                section_services_subtitle: 'Professional quality at affordable prices',
+                manicura: 'Manicure',
+                manicura_desc: 'Professional manicure with high-quality products and expert technique.',
+                pedicura: 'Pedicure',
+                pedicura_desc: 'Professional pedicure to relax and beautify your feet.',
+                beauty: 'Beauty & Depilation',
+                beauty_desc: 'Professional beauty and depilation treatments in Barcelona.',
+                section_gallery: 'Our Gallery',
+                section_gallery_subtitle: 'Real results from our clients',
+                section_contact: 'Contact',
+                contact_name: 'Name',
+                contact_email: 'Email',
+                contact_phone: 'Phone *',
+                contact_service: 'Service of Interest',
+                contact_message: 'Message',
+                contact_send: 'Send Message',
+                contact_alert: 'Thank you for your message! Your email client will open to send the message to Cinnamon Nails.',
+                trust_badge: '4.8 on Google Maps'
+            },
+            ca: {
+                inicio: 'Inici',
+                servicios: 'Serveis',
+                galeria: 'Galeria',
+                fidelidad: 'Fidelitat',
+                contacto: 'Contacte',
+                reserva: 'Reserva',
+                hero_subtitle: '✨ Ungles Sanejables & Bellesa Natural ✨',
+                hero_title: 'El Teu Moment de Bellesa a Barcelona',
+                hero_description: 'Gaudiu dels nostres serveis professionals en un saló acollidor, amb bona energia i un ambient pensat per a tu. Des de manicures i tractaments especialitzats fins a cures completes per a les teves ungles, trobaràs tot el necessari per sentir-te bé, relaxar-te i veure impecable.',
+                stat_valoraciones: 'Valoracions',
+                stat_experiencia: 'Experiència',
+                stat_express: 'Express',
+                hero_cta: 'Reserva la Teua Cita',
+                why_choose_us: '✨ Ungles boniques, sanes i autèntiques',
+                feature_1_title: 'Cura & bellesa',
+                feature_1_desc: 'Les teves ungles reben el millor: productes lliures de tòxics, segurs i pensats per a la teva salut.',
+                feature_2_title: 'Servei àgil i professional',
+                feature_2_desc: 'Ens adaptem al teu ritme i necessitats. Cada treball es realitza amb cura, sense presses innecessàries, però sempre amb eficiència.',
+                feature_3_title: 'Resultats que inspiren',
+                feature_3_desc: 'Cada client brilla amb el seu propi estil. Creem contingut autèntic que mostra resultats reals i llestos per compartir.',
+                section_services: 'Els Nostres Serveis',
+                section_services_subtitle: 'Qualitat professional amb preus assequibles',
+                manicura: 'Manicura',
+                manicura_desc: 'Manicura professional amb productes d\'alta qualitat i tècnica experta.',
+                pedicura: 'Pedicura',
+                pedicura_desc: 'Pedicura professional per relaxar-te i embellir els teus peus.',
+                beauty: 'Bellesa & Depilació',
+                beauty_desc: 'Tractaments professionals de bellesa i depilació a Barcelona.',
+                section_gallery: 'La Nova Galeria',
+                section_gallery_subtitle: 'Resultats reals de les nostres clientes',
+                section_contact: 'Contacte',
+                contact_name: 'Nom',
+                contact_email: 'Correu electrònic',
+                contact_phone: 'Telèfon *',
+                contact_service: 'Servei d\'interès',
+                contact_message: 'Missatge',
+                contact_send: 'Enviar Missatge',
+                contact_alert: 'Gràcies pel teu missatge! S\'obrirà el teu client de correu per enviar el missatge a Cinnamon Nails.',
+                trust_badge: '4.8 a Google Maps'
+            }
+        };
+
         const langBtns = document.querySelectorAll('.lang-btn');
         langBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -1243,10 +1375,96 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 // Save language preference
                 const lang = btn.dataset.lang;
                 localStorage.setItem('selectedLanguage', lang);
-                // Language switching functionality can be added here
-                console.log('Language changed to:', lang);
+                // Change language
+                changeLanguage(lang);
             });
         });
+
+        function changeLanguage(lang) {
+            const trans = translations[lang];
+            if (!trans) return;
+
+            // Navigation
+            document.querySelectorAll('.nav-text').forEach(el => {
+                const key = el.dataset.key;
+                if (trans[key]) {
+                    el.textContent = trans[key];
+                }
+            });
+
+            // Hero section
+            const heroSubtitle = document.querySelector('.subtitle');
+            const heroTitle = document.querySelector('.hero-text h1');
+            const heroDesc = document.querySelector('.hero-text .description');
+            const statLabels = document.querySelectorAll('.stat-label');
+            const heroCta = document.querySelector('.hero-text .cta-button');
+            const trustBadge = document.querySelector('.trust-badge p');
+
+            if (heroSubtitle) heroSubtitle.textContent = trans.hero_subtitle;
+            if (heroTitle) heroTitle.textContent = trans.hero_title;
+            if (heroDesc) heroDesc.textContent = trans.hero_description;
+            if (statLabels[0]) statLabels[0].textContent = trans.stat_valoraciones;
+            if (statLabels[1]) statLabels[1].textContent = trans.stat_experiencia;
+            if (statLabels[2]) statLabels[2].textContent = trans.stat_express;
+            if (heroCta) heroCta.textContent = trans.hero_cta;
+            if (trustBadge) trustBadge.textContent = trans.trust_badge;
+
+            // Choose us section
+            const chooseUsTitle = document.querySelector('#features .section-header h2');
+            const featureTitles = document.querySelectorAll('.feature-card h3');
+            const featureDescs = document.querySelectorAll('.feature-card p');
+
+            if (chooseUsTitle) chooseUsTitle.textContent = trans.why_choose_us;
+            if (featureTitles[0]) featureTitles[0].textContent = trans.feature_1_title;
+            if (featureDescs[0]) featureDescs[0].textContent = trans.feature_1_desc;
+            if (featureTitles[1]) featureTitles[1].textContent = trans.feature_2_title;
+            if (featureDescs[1]) featureDescs[1].textContent = trans.feature_2_desc;
+            if (featureTitles[2]) featureTitles[2].textContent = trans.feature_3_title;
+            if (featureDescs[2]) featureDescs[2].textContent = trans.feature_3_desc;
+
+            // Services section
+            const servicesTitle = document.querySelector('#servicios .section-header h2');
+            const servicesSubtitle = document.querySelector('#servicios .section-header p');
+            const serviceTitles = document.querySelectorAll('.service-content h3');
+            const serviceDescs = document.querySelectorAll('.service-content .service-description');
+
+            if (servicesTitle) servicesTitle.textContent = trans.section_services;
+            if (servicesSubtitle) servicesSubtitle.textContent = trans.section_services_subtitle;
+            if (serviceTitles[0]) serviceTitles[0].textContent = trans.manicura;
+            if (serviceDescs[0]) serviceDescs[0].textContent = trans.manicura_desc;
+            if (serviceTitles[1]) serviceTitles[1].textContent = trans.pedicura;
+            if (serviceDescs[1]) serviceDescs[1].textContent = trans.pedicura_desc;
+            if (serviceTitles[2]) serviceTitles[2].textContent = trans.beauty;
+            if (serviceDescs[2]) serviceDescs[2].textContent = trans.beauty_desc;
+
+            // Gallery section
+            const galleryTitle = document.querySelector('#galeria .section-header h2');
+            const gallerySubtitle = document.querySelector('#galeria .section-header p');
+
+            if (galleryTitle) galleryTitle.textContent = trans.section_gallery;
+            if (gallerySubtitle) gallerySubtitle.textContent = trans.section_gallery_subtitle;
+
+            // Contact section
+            const contactTitle = document.querySelector('#contacto .section-header h2');
+            const nameLabel = document.querySelector('label[for="name"]');
+            const emailLabel = document.querySelector('label[for="email"]');
+            const phoneLabel = document.querySelector('label[for="phone"]');
+            const serviceLabel = document.querySelector('label[for="service"]');
+            const messageLabel = document.querySelector('label[for="message"]');
+            const submitBtn = document.querySelector('.submit-button');
+            const serviceOptions = document.querySelectorAll('#service option');
+
+            if (contactTitle) contactTitle.textContent = trans.section_contact;
+            if (nameLabel) nameLabel.textContent = trans.contact_name;
+            if (emailLabel) emailLabel.textContent = trans.contact_email;
+            if (phoneLabel) phoneLabel.textContent = trans.contact_phone;
+            if (serviceLabel) serviceLabel.textContent = trans.contact_service;
+            if (messageLabel) messageLabel.textContent = trans.contact_message;
+            if (submitBtn) submitBtn.textContent = trans.contact_send;
+            if (serviceOptions[1]) serviceOptions[1].textContent = trans.manicura;
+            if (serviceOptions[2]) serviceOptions[2].textContent = trans.pedicura;
+            if (serviceOptions[3]) serviceOptions[3].textContent = trans.beauty;
+        }
 
         // Load saved language preference on page load
         document.addEventListener('DOMContentLoaded', () => {
@@ -1258,6 +1476,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                         btn.classList.add('active');
                     }
                 });
+                changeLanguage(savedLang);
             }
         });
 
