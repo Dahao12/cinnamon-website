@@ -1544,7 +1544,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 contact_phone: 'Telèfon *',
                 contact_service: 'Servei d\'interès',
                 contact_message: 'Missatge',
-                contact_send: 'Enviar Missatge',
+                contact_send: 'Envia Missatge',
                 contact_alert: 'Gràcies pel teu missatge! S\'obrirà el teu client de correu per enviar el missatge a Cinnamon Nails.',
                 trust_badge: '4.8 a Google Maps',
                 section_fidelidad: 'Targeta de Fidelitat',
@@ -1601,7 +1601,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 legal_aviso: 'Avís Legal',
                 legal_privacidad: 'Privacitat',
                 legal_cookies: 'Galetes',
-                footer_reserva: 'Reserva la Teua Cita',
+                footer_reserva: 'Reserva la Teva Cita',
                 footer_copyright: '© 2026 Cinnamon Nails Studio Barcelona. Tots els drets reservats.',
                 nav_servicios: 'Serveis',
                 nav_galeria: 'Galeria',
@@ -1617,9 +1617,9 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 langBtns.forEach(b => b.classList.remove('active'));
                 // Add active class to clicked button
                 btn.classList.add('active');
-                // Save language preference
+                // Language preference saved
                 const lang = btn.dataset.lang;
-                localStorage.setItem('selectedLanguage', lang);
+                // localStorage.setItem('selectedLanguage', lang); // Spanish always loads first
                 // Change language
                 changeLanguage(lang);
             });
@@ -1695,18 +1695,16 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
 
         // Load saved language preference on page load
         document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('selectedLanguage');
-            const defaultLang = 'es'; // Spanish as default language
-            const langToUse = savedLang || defaultLang;
+            const defaultLang = 'es'; // Spanish as default language - ALWAYS load Spanish first
 
             langBtns.forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.dataset.lang === langToUse) {
+                if (btn.dataset.lang === defaultLang) {
                     btn.classList.add('active');
                 }
             });
 
-            changeLanguage(langToUse);
+            changeLanguage(defaultLang);
         });
 
         // Header scroll effect
