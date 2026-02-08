@@ -515,6 +515,53 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             color: var(--gray-medium);
         }
 
+        /* Google Reviews Container */
+        .google-reviews-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .google-reviews-container iframe {
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .google-reviews-container iframe:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+        }
+
+        /* Trust Badge for Reviews */
+        .trust-badge-review {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin: 0 auto;
+        }
+
+        .trust-badge-review-left,
+        .trust-badge-review-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trust-badge-review-left {
+            border-right: 2px solid #E8EAED;
+            padding-right: 1.5rem;
+        }
+
+        .trust-badge-review-right {
+            flex-direction: column;
+        }
+
         /* Contact Section */
         .contact-grid {
             display: grid;
@@ -1081,28 +1128,33 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
     <section id="testimonials" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 data-key="section_testimonials">Qué Dicen Nuestras Clientas</h2>
+                <h2 data-key="section_testimonials">Reseñas en Google Maps</h2>
                 <div class="line"></div>
-                <p data-key="section_testimonials_subtitle">Últimas Valoraciones⭐️</p>
+                <p data-key="section_testimonials_subtitle">Valoraciones reales de nuestras clientas⭐️</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text" data-key="testimonial_1_text">"¡Increíble servicio! Las uñas me duraron 3 semanas perfectas. El ambiente es relajante y las profesionales son amables. Definitivamente volveré."</p>
-                    <p class="testimonial-author" data-key="testimonial_1_author">- Maria G.</p>
-                    <p class="testimonial-date" data-key="testimonial_1_date">Hace 2 semanas</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text" data-key="testimonial_2_text">"El servicio express de 40 minutos me salvó durante mi pausa del almuerzo. Perfecto para profesionales ocupadas que quieren estar perfectas."</p>
-                    <p class="testimonial-author" data-key="testimonial_2_author">- Laura P.</p>
-                    <p class="testimonial-date" data-key="testimonial_2_date">Hace 1 semana</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text" data-key="testimonial_3_text">"Me encanta que usan productos no tóxicos. Puedo disfrutar de una manicura hermosa sin preocuparme por mi salud. Highly recommend!"</p>
-                    <p class="testimonial-author" data-key="testimonial_3_author">- Ana M.</p>
-                    <p class="testimonial-date" data-key="testimonial_3_date">Hace 3 semanas</p>
+
+            <!-- Google Reviews Embed -->
+            <div class="google-reviews-container">
+                <iframe
+                    src="https://maps.google.com/maps?q=Cinnamon+Nails+Barcelona&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="450"
+                    frameborder="0"
+                    style="border:0; border-radius: 12px;"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Trust Badge -->
+            <div style="text-align: center; margin-top: 30px;">
+                <div class="trust-badge-review">
+                    <div class="trust-badge-review-left">
+                        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" width="60" style="margin: 0 10px;">
+                    </div>
+                    <div class="trust-badge-review-right">
+                        <div style="font-size: 24px; font-weight: bold; color: #202124;">4.8</div>
+                        <div style="color: #5F6368; font-size: 14px;">Valoración</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1331,7 +1383,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 section_gallery: 'Nuestra Galería',
                 section_gallery_subtitle: 'Resultados reales de nuestras clientas',
                 section_testimonials: 'Qué Dicen Nuestras Clientas',
-                section_testimonials_subtitle: 'Últimas Valoraciones⭐️',
+                section_testimonials_subtitle: 'Valoraciones reales de nuestras clientas⭐️',
                 section_contact: 'Contacto',
                 contact_name: 'Nombre',
                 contact_email: 'Email',
@@ -1434,8 +1486,8 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 beauty_desc: 'Professional beauty and depilation treatments in Barcelona.',
                 section_gallery: 'Our Gallery',
                 section_gallery_subtitle: 'Real results from our clients',
-                section_testimonials: 'What Our Clients Say',
-                section_testimonials_subtitle: 'Latest Reviews⭐️',
+                section_testimonials: 'Google Maps Reviews',
+                section_testimonials_subtitle: 'Real reviews from our clients⭐️',
                 section_contact: 'Contact',
                 contact_name: 'Name',
                 contact_email: 'Email',
@@ -1538,7 +1590,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 beauty_desc: 'Tractaments professionals de bellesa i depilació a Barcelona.',
                 section_gallery: 'La Nova Galeria',
                 section_gallery_subtitle: 'Resultats reals de les nostres clientes',
-                section_testimonials: 'Què Diuen les Nostres Clientes',
+                section_testimonials: 'Resenyes a Google Maps',
                 section_testimonials_subtitle: 'Últimes Valoracions⭐️',
                 section_contact: 'Contacte',
                 contact_name: 'Nom',
