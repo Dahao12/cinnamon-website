@@ -529,6 +529,21 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             max-width: 900px;
         }
 
+        /* Hide Elfsight Free branding */
+        .elfsight-reviews-container .elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa [class*="branding"],
+        .elfsight-reviews-container .elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa [class*="footer"],
+        .elfsight-reviews-container .elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa a[href*="elfsight.com"],
+        .elfsight-reviews-container .elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa div:contains("Free"),
+        .elfsight-reviews-container .elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa span:contains("Free") {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            overflow: hidden !important;
+        }
+
         /* Contact Section */
         .contact-grid {
             display: grid;
@@ -1771,6 +1786,40 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             section.classList.add('fade-in');
             observer.observe(section);
         });
+
+        // Hide Elfsight Free branding text
+        function hideElfsightBranding() {
+            // Try multiple times because widget loads asynchronously
+            const hideBranding = () => {
+                // Find elements containing "Free" or "elfsight" references
+                const widgetContainer = document.querySelector('.elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa');
+                if (widgetContainer) {
+                    const allElements = widgetContainer.querySelectorAll('*');
+                    allElements.forEach(el => {
+                        if (el.textContent && (el.textContent.includes('Free') || el.textContent.includes('Widget'))) {
+                            el.style.display = 'none';
+                            el.style.visibility = 'hidden';
+                        }
+                    });
+
+                    // Hide footer/link elements that might contain branding
+                    const brandingLinks = widgetContainer.querySelectorAll('a[href*="elfsight"]');
+                    brandingLinks.forEach(link => {
+                        link.remove();
+                    });
+                }
+            };
+
+            // Run immediately and then every 500ms for first 5 seconds
+            hideBranding();
+            const interval = setInterval(hideBranding, 500);
+
+            // Stop trying after 5 seconds
+            setTimeout(() => clearInterval(interval), 5000);
+        }
+
+        // Start hiding branding when page loads
+        window.addEventListener('load', hideElfsightBranding);
     </script>
 
     <!-- WhatsApp Floating Button -->
