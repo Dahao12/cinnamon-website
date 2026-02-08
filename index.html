@@ -105,7 +105,8 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
         .logo-img {
             height: 50px;
             width: auto;
-            object-fit: contain;
+            display: block;
+            cursor: pointer;
         }
 
         .nav-links {
@@ -641,18 +642,11 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             margin-bottom: 2rem;
         }
 
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
         .footer-logo-img {
             max-width: 200px;
             height: auto;
-            object-fit: contain;
+            display: block;
+            margin-bottom: 1rem;
         }
 
         .footer-logo span {
@@ -842,7 +836,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
     <!-- Header -->
     <header id="header">
         <nav class="container">
-            <a href="#" class="logo"><img src="logo.png" alt="Cinnamon Nails Studio" class="logo-img"></a>
+            <img src="logo.png" alt="Cinnamon Nails Studio" class="logo-img" onclick="window.location.href='#'">
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio" class="nav-text" data-key="inicio">Inicio</a></li>
                 <li><a href="#servicios" class="nav-text" data-key="servicios">Servicios</a></li>
@@ -1237,7 +1231,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="footer-logo"><img src="logo.png" alt="Cinnamon Nails Studio" class="footer-logo-img"></div>
+                    <img src="logo.png" alt="Cinnamon Nails Studio" class="footer-logo-img">
                     <p>Tu salón de uñas y belleza en Barcelona. Experiencia de más de 10 años.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/cinnamon_nails_studio/" target="_blank">
