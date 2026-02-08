@@ -515,51 +515,18 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             color: var(--gray-medium);
         }
 
-        /* Google Reviews Container */
-        .google-reviews-container {
+        /* Elfsight Google Reviews Container */
+        .elfsight-reviews-container {
             display: flex;
             justify-content: center;
             margin: 2rem 0;
+            min-height: 400px;
         }
 
-        .google-reviews-container iframe {
+        /* Elfsight widget styling override if needed */
+        .elfsight-reviews-container .elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa {
             width: 100%;
-            max-width: 800px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .google-reviews-container iframe:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(0,0,0,0.15);
-        }
-
-        /* Trust Badge for Reviews */
-        .trust-badge-review {
-            display: inline-flex;
-            align-items: center;
-            gap: 1.5rem;
-            background: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            margin: 0 auto;
-        }
-
-        .trust-badge-review-left,
-        .trust-badge-review-right {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .trust-badge-review-left {
-            border-right: 2px solid #E8EAED;
-            padding-right: 1.5rem;
-        }
-
-        .trust-badge-review-right {
-            flex-direction: column;
+            max-width: 900px;
         }
 
         /* Contact Section */
@@ -1133,29 +1100,11 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 <p data-key="section_testimonials_subtitle">Valoraciones reales de nuestras clientas⭐️</p>
             </div>
 
-            <!-- Google Reviews Embed -->
-            <div class="google-reviews-container">
-                <iframe
-                    src="https://maps.google.com/maps?q=Cinnamon+Nails+Barcelona&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                    width="100%"
-                    height="450"
-                    frameborder="0"
-                    style="border:0; border-radius: 12px;"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <!-- Trust Badge -->
-            <div style="text-align: center; margin-top: 30px;">
-                <div class="trust-badge-review">
-                    <div class="trust-badge-review-left">
-                        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" width="60" style="margin: 0 10px;">
-                    </div>
-                    <div class="trust-badge-review-right">
-                        <div style="font-size: 24px; font-weight: bold; color: #202124;">4.8</div>
-                        <div style="color: #5F6368; font-size: 14px;">Valoración</div>
-                    </div>
-                </div>
+            <!-- Elfsight Google Reviews Widget -->
+            <div class="elfsight-reviews-container">
+                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa" data-elfsight-app-lazy></div>
             </div>
         </div>
     </section>
