@@ -1112,25 +1112,24 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
     <section id="fidelidad" class="section section-bg-gray">
         <div class="container">
             <div class="section-header">
-                <h2>Tarjeta de Fidelidad Online</h2>
+                <h2 class="fidelity-title">Tarjeta de Fidelidad</h2>
                 <div class="line"></div>
-                <p>Ahorra con tu 5ª visita GRATIS</p>
             </div>
             <div class="features">
                 <div class="feature-card" style="text-align: center;">
                     <div class="feature-icon">🎯</div>
-                    <h3>Cómo Funciona</h3>
-                    <p>Acumula visitas en tu tarjeta digital. La 5ª cita es totalmente gratuita. Sin fecha de caducidad.</p>
+                    <h3>¡Ahorra en tu 6ª visita!</h3>
+                    <p>Te entregamos tu tarjeta en el salón. Cada vez que vengas, la sellamos. Completa 5 visitas y obtén descuento en la 6ª.</p>
                 </div>
                 <div class="feature-card" style="text-align: center;">
-                    <div class="feature-icon">📱</div>
-                    <h3>Siempre Disponible</h3>
-                    <p>Consulte su saldo de visitas en cualquier momento a través de WhatsApp o llamando al salón.</p>
+                    <div class="feature-icon">🪪</div>
+                    <h3>¡Tu tarjeta!</h3>
+                    <p>Recuerda traer tu tarjeta en cada cita para poder marcarla, y acumules más puntos.</p>
                 </div>
                 <div class="feature-card" style="text-align: center;">
                     <div class="feature-icon">🎁</div>
-                    <h3>Beneficios Exclusivos</h3>
-                    <p>Descuentos especiales para clientes recurrentes y promociones temporada.</p>
+                    <h3>¡Te premiamos por volver!</h3>
+                    <p>Ventajas y ofertas especiales para nuestros clientes fieles.</p>
                 </div>
             </div>
         </div>
@@ -1339,7 +1338,14 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 contact_message: 'Mensaje',
                 contact_send: 'Enviar Mensaje',
                 contact_alert: '¡Gracias por tu mensaje! Se abrirá tu cliente de correo para enviar el mensaje a Cinnamon Nails.',
-                trust_badge: '4.8 en Google Maps'
+                trust_badge: '4.8 en Google Maps',
+                section_fidelidad: 'Tarjeta de Fidelidad',
+                fidelidad_card_1_title: '¡Ahorra en tu 6ª visita!',
+                fidelidad_card_1_desc: 'Te entregamos tu tarjeta en el salón. Cada vez que vengas, la sellamos. Completa 5 visitas y obtén descuento en la 6ª.',
+                fidelidad_card_2_title: '¡Tu tarjeta!',
+                fidelidad_card_2_desc: 'Recuerda traer tu tarjeta en cada cita para poder marcarla, y acumules más puntos.',
+                fidelidad_card_3_title: '¡Te premiamos por volver!',
+                fidelidad_card_3_desc: 'Ventajas y ofertas especiales para nuestros clientes fieles.'
             },
             en: {
                 inicio: 'Home',
@@ -1380,7 +1386,14 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 contact_message: 'Message',
                 contact_send: 'Send Message',
                 contact_alert: 'Thank you for your message! Your email client will open to send the message to Cinnamon Nails.',
-                trust_badge: '4.8 on Google Maps'
+                trust_badge: '4.8 on Google Maps',
+                section_fidelidad: 'Loyalty Card',
+                fidelidad_card_1_title: 'Save on your 6th visit!',
+                fidelidad_card_1_desc: 'We give you your card at the salon. Every time you come, we stamp it. Complete 5 visits and get a discount on your 6th.',
+                fidelidad_card_2_title: 'Your card!',
+                fidelidad_card_2_desc: 'Remember to bring your card to each appointment so we can mark it and you can accumulate more points.',
+                fidelidad_card_3_title: 'We reward you for coming back!',
+                fidelidad_card_3_desc: 'Special advantages and offers for our loyal clients.'
             },
             ca: {
                 inicio: 'Inici',
@@ -1421,7 +1434,14 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 contact_message: 'Missatge',
                 contact_send: 'Enviar Missatge',
                 contact_alert: 'Gràcies pel teu missatge! S\'obrirà el teu client de correu per enviar el missatge a Cinnamon Nails.',
-                trust_badge: '4.8 a Google Maps'
+                trust_badge: '4.8 a Google Maps',
+                section_fidelidad: 'Targeta de Fidelitat',
+                fidelidad_card_1_title: 'Estalvia a la teva 6ª visita!',
+                fidelidad_card_1_desc: 'Et lliurem la targeta al saló. Cada cop que vinguis, segellarem-la. Completa 5 visites i obté descompte en la 6ª.',
+                fidelidad_card_2_title: 'La teva targeta!',
+                fidelidad_card_2_desc: 'Recorda portar la targeta a cada cita per poder marcar-la, i acumular més punts.',
+                fidelidad_card_3_title: 'Et recompensem per tornar!',
+                fidelidad_card_3_desc: 'Avantatges i ofertes especials per als nostres clients fidels.'
             }
         };
 
@@ -1503,6 +1523,19 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
 
             if (galleryTitle) galleryTitle.textContent = trans.section_gallery;
             if (gallerySubtitle) gallerySubtitle.textContent = trans.section_gallery_subtitle;
+
+            // Fidelidad section
+            const fidelidadTitle = document.querySelector('#fidelidad .fidelity-title');
+            const fidelidadCards = document.querySelectorAll('#fidelidad .feature-card h3');
+            const fidelidadDescs = document.querySelectorAll('#fidelidad .feature-card p');
+
+            if (fidelidadTitle) fidelidadTitle.textContent = trans.section_fidelidad;
+            if (fidelidadCards[4]) fidelidadCards[4].textContent = trans.fidelidad_card_1_title;
+            if (fidelidadDescs[4]) fidelidadDescs[4].textContent = trans.fidelidad_card_1_desc;
+            if (fidelidadCards[5]) fidelidadCards[5].textContent = trans.fidelidad_card_2_title;
+            if (fidelidadDescs[5]) fidelidadDescs[5].textContent = trans.fidelidad_card_2_desc;
+            if (fidelidadCards[6]) fidelidadCards[6].textContent = trans.fidelidad_card_3_title;
+            if (fidelidadDescs[6]) fidelidadDescs[6].textContent = trans.fidelidad_card_3_desc;
 
             // Contact section
             const contactTitle = document.querySelector('#contacto .section-header h2');
