@@ -1083,7 +1083,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             <div class="section-header">
                 <h2>Qué Dicen Nuestras Clientas</h2>
                 <div class="line"></div>
-                <p>Últimas valoraciones de Google Maps</p>
+                <p>Últimas Valoraciones⭐️</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -1330,6 +1330,8 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 beauty_desc: 'Tratamientos de belleza y depilación profesional en Barcelona.',
                 section_gallery: 'Nuestra Galería',
                 section_gallery_subtitle: 'Resultados reales de nuestras clientas',
+                section_testimonials: 'Qué Dicen Nuestras Clientas',
+                section_testimonials_subtitle: 'Últimas Valoraciones⭐️',
                 section_contact: 'Contacto',
                 contact_name: 'Nombre',
                 contact_email: 'Email',
@@ -1378,6 +1380,8 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 beauty_desc: 'Professional beauty and depilation treatments in Barcelona.',
                 section_gallery: 'Our Gallery',
                 section_gallery_subtitle: 'Real results from our clients',
+                section_testimonials: 'What Our Clients Say',
+                section_testimonials_subtitle: 'Latest Reviews⭐️',
                 section_contact: 'Contact',
                 contact_name: 'Name',
                 contact_email: 'Email',
@@ -1426,6 +1430,8 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 beauty_desc: 'Tractaments professionals de bellesa i depilació a Barcelona.',
                 section_gallery: 'La Nova Galeria',
                 section_gallery_subtitle: 'Resultats reals de les nostres clientes',
+                section_testimonials: 'Què Diuen les Nostres Clientes',
+                section_testimonials_subtitle: 'Últimes Valoracions⭐️',
                 section_contact: 'Contacte',
                 contact_name: 'Nom',
                 contact_email: 'Correu electrònic',
@@ -1523,6 +1529,21 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
 
             if (galleryTitle) galleryTitle.textContent = trans.section_gallery;
             if (gallerySubtitle) gallerySubtitle.textContent = trans.section_gallery_subtitle;
+
+            // Testimonials section
+            const testimonialsHeaders = document.querySelectorAll('.section-header');
+            let testimonialsTitle = null;
+            let testimonialsSubtitle = null;
+            testimonialsHeaders.forEach(header => {
+                const h2 = header.querySelector('h2');
+                if (h2 && h2.textContent.includes('Qué Dicen Nuestras Clientes')) {
+                    testimonialsTitle = h2;
+                    testimonialsSubtitle = header.querySelector('p');
+                }
+            });
+
+            if (testimonialsTitle) testimonialsTitle.textContent = trans.section_testimonials;
+            if (testimonialsSubtitle) testimonialsSubtitle.textContent = trans.section_testimonials_subtitle;
 
             // Fidelidad section
             const fidelidadTitle = document.querySelector('#fidelidad .fidelity-title');
