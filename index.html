@@ -895,7 +895,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
     </section>
 
     <!-- Features -->
-    <section class="section section-bg-gray">
+    <section id="features" class="section section-bg-gray">
         <div class="container">
             <div class="section-header">
                 <h2>✨ Uñas hermosas, saludables y auténticas</h2>
@@ -1078,7 +1078,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
     </section>
 
     <!-- Testimonials -->
-    <section class="section">
+    <section id="testimonials" class="section">
         <div class="container">
             <div class="section-header">
                 <h2>Qué Dicen Nuestras Clientas</h2>
@@ -1656,12 +1656,12 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             const fidelidadDescs = document.querySelectorAll('#fidelidad .feature-card p');
 
             if (fidelidadTitle) fidelidadTitle.textContent = trans.section_fidelidad;
-            if (fidelidadCards[4]) fidelidadCards[4].textContent = trans.fidelidad_card_1_title;
-            if (fidelidadDescs[4]) fidelidadDescs[4].textContent = trans.fidelidad_card_1_desc;
-            if (fidelidadCards[5]) fidelidadCards[5].textContent = trans.fidelidad_card_2_title;
-            if (fidelidadDescs[5]) fidelidadDescs[5].textContent = trans.fidelidad_card_2_desc;
-            if (fidelidadCards[6]) fidelidadCards[6].textContent = trans.fidelidad_card_3_title;
-            if (fidelidadDescs[6]) fidelidadDescs[6].textContent = trans.fidelidad_card_3_desc;
+            if (fidelidadCards[0]) fidelidadCards[0].textContent = trans.fidelidad_card_1_title;
+            if (fidelidadDescs[0]) fidelidadDescs[0].textContent = trans.fidelidad_card_1_desc;
+            if (fidelidadCards[1]) fidelidadCards[1].textContent = trans.fidelidad_card_2_title;
+            if (fidelidadDescs[1]) fidelidadDescs[1].textContent = trans.fidelidad_card_2_desc;
+            if (fidelidadCards[2]) fidelidadCards[2].textContent = trans.fidelidad_card_3_title;
+            if (fidelidadDescs[2]) fidelidadDescs[2].textContent = trans.fidelidad_card_3_desc;
 
             // Contact section
             const contactTitle = document.querySelector('#contacto .section-header h2');
@@ -1732,15 +1732,17 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
         // Load saved language preference on page load
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('selectedLanguage');
-            if (savedLang) {
-                langBtns.forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.dataset.lang === savedLang) {
-                        btn.classList.add('active');
-                    }
-                });
-                changeLanguage(savedLang);
-            }
+            const defaultLang = 'es'; // Spanish as default language
+            const langToUse = savedLang || defaultLang;
+
+            langBtns.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === langToUse) {
+                    btn.classList.add('active');
+                }
+            });
+
+            changeLanguage(langToUse);
         });
 
         // Header scroll effect
