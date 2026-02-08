@@ -515,33 +515,99 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             color: var(--gray-medium);
         }
 
-        /* Elfsight Google Reviews Container */
-        .elfsight-reviews-container {
+        /* Google Maps Reviews CTA */
+        .google-reviews-cta {
             display: flex;
             justify-content: center;
             margin: 2rem 0;
-            min-height: 400px;
         }
 
-        /* Elfsight widget styling override if needed */
-        .elfsight-reviews-container .elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa {
+        .google-reviews-card {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 700px;
             width: 100%;
-            max-width: 900px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Hide Elfsight Free branding */
-        .elfsight-reviews-container .elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa [class*="branding"],
-        .elfsight-reviews-container .elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa [class*="footer"],
-        .elfsight-reviews-container .elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa a[href*="elfsight.com"],
-        .elfsight-reviews-container .elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa div:contains("Free"),
-        .elfsight-reviews-container .elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa span:contains("Free") {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            position: absolute !important;
-            width: 1px !important;
-            height: 1px !important;
-            overflow: hidden !important;
+        .google-reviews-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .google-reviews-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .google-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .google-reviews-rating {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rating-stars {
+            color: #FFD700;
+            font-size: 1.75rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--cinnamon-dark);
+        }
+
+        .google-reviews-content {
+            margin-top: 2rem;
+        }
+
+        .reviews-text {
+            font-size: 1.125rem;
+            color: var(--gray-dark);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .google-reviews-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+            color: white;
+            padding: 1.25rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+        }
+
+        .google-reviews-button:hover {
+            background: linear-gradient(135deg, #34A853 0%, #4285F4 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4);
+        }
+
+        .google-reviews-button svg {
+            transition: transform 0.3s ease;
+        }
+
+        .google-reviews-button:hover svg {
+            transform: translateX(3px);
         }
 
         /* Contact Section */
@@ -1115,11 +1181,26 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 <p data-key="section_testimonials_subtitle">Valoraciones reales de nuestras clientas⭐️</p>
             </div>
 
-            <!-- Elfsight Google Reviews Widget -->
-            <div class="elfsight-reviews-container">
-                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-                <script src="https://elfsightcdn.com/platform.js" async></script>
-                <div class="elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa" data-elfsight-app-lazy></div>
+            <!-- Google Maps Reviews CTA -->
+            <div class="google-reviews-cta">
+                <div class="google-reviews-card">
+                    <div class="google-reviews-header">
+                        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" class="google-logo">
+                        <div class="google-reviews-rating">
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="rating-number">4.8</div>
+                        </div>
+                    </div>
+                    <div class="google-reviews-content">
+                        <p class="reviews-text" data-key="google_reviews_text">Lee las reseñas reales de nuestras clientas, mira fotos de nuestros trabajos y comparte tu experiencia.</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Cinnamon+Nails+Barcelona+Travessera+de+Gràcia+415" target="_blank" class="google-reviews-button" data-key="google_reviews_button">
+                            VER RESEÑAS EN GOOGLE MAPS
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1411,6 +1492,15 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 legal_aviso: 'Aviso Legal',
                 legal_privacidad: 'Privacidad',
                 legal_cookies: 'Cookies',
+                google_reviews_text: "Lee las reseñas reales de nuestras clientas, mira fotos de nuestros trabajos y comparte tu experiencia.",
+                google_reviews_button: "VER RESEÑAS EN GOOGLE MAPS",
+
+                google_reviews_text: "Read real reviews from our clients, see photos of our work, and share your experience.",
+                google_reviews_button: "VIEW REVIEWS ON GOOGLE MAPS",
+
+                google_reviews_text: "Llegeix les ressenyes reals de les nostres clientes, mira fotos del nostre treball i comparteix la teva experiència.",
+                google_reviews_button: "VEURE RESSENYES A GOOGLE MAPS",
+
                 footer_reserva: 'Reserva Tu Cita',
                 footer_copyright: '© 2026 Cinnamon Nails Studio Barcelona. Todos los derechos reservados.',
                 instagram_link: 'Ver más en Instagram @cinnamon_nails_studio',
@@ -1515,6 +1605,15 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 legal_aviso: 'Legal Notice',
                 legal_privacidad: 'Privacy',
                 legal_cookies: 'Cookies',
+                google_reviews_text: "Lee las reseñas reales de nuestras clientas, mira fotos de nuestros trabajos y comparte tu experiencia.",
+                google_reviews_button: "VER RESEÑAS EN GOOGLE MAPS",
+
+                google_reviews_text: "Read real reviews from our clients, see photos of our work, and share your experience.",
+                google_reviews_button: "VIEW REVIEWS ON GOOGLE MAPS",
+
+                google_reviews_text: "Llegeix les ressenyes reals de les nostres clientes, mira fotos del nostre treball i comparteix la teva experiència.",
+                google_reviews_button: "VEURE RESSENYES A GOOGLE MAPS",
+
                 footer_reserva: 'Book',
                 footer_copyright: '© 2026 Cinnamon Nails Studio Barcelona. All rights reserved.',
                 instagram_link: 'See more on Instagram @cinnamon_nails_studio',
@@ -1619,6 +1718,15 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 legal_aviso: 'Avís Legal',
                 legal_privacidad: 'Privacitat',
                 legal_cookies: 'Galetes',
+                google_reviews_text: "Lee las reseñas reales de nuestras clientas, mira fotos de nuestros trabajos y comparte tu experiencia.",
+                google_reviews_button: "VER RESEÑAS EN GOOGLE MAPS",
+
+                google_reviews_text: "Read real reviews from our clients, see photos of our work, and share your experience.",
+                google_reviews_button: "VIEW REVIEWS ON GOOGLE MAPS",
+
+                google_reviews_text: "Llegeix les ressenyes reals de les nostres clientes, mira fotos del nostre treball i comparteix la teva experiència.",
+                google_reviews_button: "VEURE RESSENYES A GOOGLE MAPS",
+
                 footer_reserva: 'Reserva la Teva Cita',
                 footer_copyright: '© 2026 Cinnamon Nails Studio Barcelona. Tots els drets reservats.',
                 instagram_link: 'Més a Instagram @cinnamon_nails_studio',
@@ -1787,39 +1895,6 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             observer.observe(section);
         });
 
-        // Hide Elfsight Free branding text
-        function hideElfsightBranding() {
-            // Try multiple times because widget loads asynchronously
-            const hideBranding = () => {
-                // Find elements containing "Free" or "elfsight" references
-                const widgetContainer = document.querySelector('.elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa');
-                if (widgetContainer) {
-                    const allElements = widgetContainer.querySelectorAll('*');
-                    allElements.forEach(el => {
-                        if (el.textContent && (el.textContent.includes('Free') || el.textContent.includes('Widget'))) {
-                            el.style.display = 'none';
-                            el.style.visibility = 'hidden';
-                        }
-                    });
-
-                    // Hide footer/link elements that might contain branding
-                    const brandingLinks = widgetContainer.querySelectorAll('a[href*="elfsight"]');
-                    brandingLinks.forEach(link => {
-                        link.remove();
-                    });
-                }
-            };
-
-            // Run immediately and then every 500ms for first 5 seconds
-            hideBranding();
-            const interval = setInterval(hideBranding, 500);
-
-            // Stop trying after 5 seconds
-            setTimeout(() => clearInterval(interval), 5000);
-        }
-
-        // Start hiding branding when page loads
-        window.addEventListener('load', hideElfsightBranding);
     </script>
 
     <!-- WhatsApp Floating Button -->
