@@ -9,7 +9,9 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
     <title>Cinnamon Nails Studio | Salón de Uñas & Belleza Barcelona</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&family=Oswald:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -89,24 +91,26 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--cinnamon-dark);
+            display: inline-block;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
         }
 
-        .logo span {
+        .logo-main {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
             color: var(--cinnamon);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1;
         }
 
-        .logo-img {
-            height: 50px;
-            width: auto;
-            display: block;
-            cursor: pointer;
+        .logo-sub {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.1rem;
+            color: var(--cinnamon);
+            margin-top: 2px;
+            line-height: 1;
         }
 
         .nav-links {
@@ -642,14 +646,11 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             margin-bottom: 2rem;
         }
 
-        .footer-logo-img {
-            max-width: 200px;
-            height: auto;
-            display: block;
+        .footer-logo {
             margin-bottom: 1rem;
         }
 
-        .footer-logo span {
+        .footer-section h4 {
             color: var(--cinnamon);
             font-weight: 400;
         }
@@ -810,12 +811,12 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 grid-template-columns: 1fr;
             }
 
-            .logo-img {
-                height: 40px;
+            .logo-main {
+                font-size: 1.1rem;
             }
 
-            .footer-logo-img {
-                max-width: 150px;
+            .logo-sub {
+                font-size: 0.9rem;
             }
         }
 
@@ -836,7 +837,10 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
     <!-- Header -->
     <header id="header">
         <nav class="container">
-            <img src="logo.png" alt="Cinnamon Nails Studio" class="logo-img" onclick="window.location.href='#'">
+            <div class="logo">
+                <div class="logo-main">CINNAMON NAILS</div>
+                <div class="logo-sub">& Beauty</div>
+            </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio" class="nav-text" data-key="inicio">Inicio</a></li>
                 <li><a href="#servicios" class="nav-text" data-key="servicios">Servicios</a></li>
@@ -1231,7 +1235,10 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="logo.png" alt="Cinnamon Nails Studio" class="footer-logo-img">
+                    <div class="footer-logo">
+                        <div class="logo-main">CINNAMON NAILS</div>
+                        <div class="logo-sub">& Beauty</div>
+                    </div>
                     <p>Tu salón de uñas y belleza en Barcelona. Experiencia de más de 10 años.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/cinnamon_nails_studio/" target="_blank">
