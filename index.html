@@ -630,7 +630,7 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             max-width: 1200px;
             width: 100%;
             margin: 2rem 0;
@@ -638,17 +638,17 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
 
         .sample-review-card {
             background: white;
-            padding: 2.5rem 2rem;
+            padding: 2rem 1.5rem;
             border-radius: var(--border-radius);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            min-width: 300px;
+            min-width: 280px;
         }
 
         /* Desktop - 3 cards side by side */
         @media (min-width: 993px) {
             .sample-review-card {
-                flex: 0 0 calc(33.333% - 1.5rem);
+                flex: 0 0 calc(33.333% - 1rem);
                 max-width: 400px;
             }
 
@@ -661,8 +661,8 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
         /* Tablet - 2 cards side by side */
         @media (min-width: 769px) and (max-width: 992px) {
             .sample-review-card {
-                flex: 0 0 calc(50% - 1rem);
-                min-width: 280px;
+                flex: 0 0 calc(50% - 0.75rem);
+                min-width: 300px;
             }
 
             .sample-review-card:hover {
@@ -671,25 +671,28 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             }
         }
 
-        /* Mobile - VERTICAL STACKED */
+        /* Mobile - HORIZONTAL SCROLL (1 side-by-side, others wrapped) */
         @media (max-width: 768px) {
             .sample-reviews {
-                flex-direction: column !important;
-                align-items: center;
-                gap: 2rem;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                gap: 1rem;
+                padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
             }
 
             .sample-review-card {
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: 100% !important;
-                flex: 0 0 auto !important;
+                flex: 0 0 85%;
+                max-width: 85%;
+                scroll-snap-align: start;
                 padding: 2rem 1.5rem;
             }
 
             .sample-review-card:hover {
-                transform: none !important;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+                transform: translateY(-3px);
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             }
         }
 
