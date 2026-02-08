@@ -625,26 +625,51 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             text-decoration: underline;
         }
 
-        /* Sample Reviews Grid */
+        /* Sample Reviews Grid - Horizontal Layout */
         .sample-reviews {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
-            max-width: 1000px;
+            max-width: 1200px;
             width: 100%;
+            margin: 2rem 0;
         }
 
         .sample-review-card {
             background: white;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             border-radius: var(--border-radius);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 0 0 calc(33.333% - 1.5rem);
+            min-width: 300px;
+            max-width: 400px;
         }
 
         .sample-review-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 992px) {
+            .sample-review-card {
+                flex: 0 0 calc(50% - 1rem);
+                min-width: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sample-reviews {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sample-review-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+                min-width: 100%;
+            }
         }
 
         .review-header {
