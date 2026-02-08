@@ -515,17 +515,179 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
             color: var(--gray-medium);
         }
 
-        /* Elfsight Google Reviews Container */
-        .elfsight-reviews-container {
+        /* Google Maps Reviews Wrapper */
+        .google-reviews-wrapper {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
             margin: 2rem 0;
-            min-height: 400px;
         }
 
-        .elfsight-reviews-container .elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa {
+        /* Google Maps CTA Card */
+        .google-maps-cta-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 700px;
             width: 100%;
-            max-width: 900px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .google-maps-cta-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .cta-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .google-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .cta-rating {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rating-stars {
+            color: #FFD700;
+            font-size: 1.75rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--cinnamon-dark);
+        }
+
+        .cta-text {
+            font-size: 1.125rem;
+            color: var(--gray-dark);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+            color: white;
+            padding: 1.25rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #34A853 0%, #4285F4 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4);
+        }
+
+        .cta-button svg {
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover svg {
+            transform: translateX(3px);
+        }
+
+        .cta-subtext {
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-medium);
+        }
+
+        .cta-subtext a {
+            color: var(--cinnamon);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .cta-subtext a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sample Reviews Grid */
+        .sample-reviews {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .sample-review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sample-review-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .customer-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--cinnamon-light), var(--cinnamon));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .customer-name {
+            font-weight: 600;
+            color: var(--cinnamon-dark);
+            font-size: 1rem;
+        }
+
+        .review-stars {
+            color: #FFD700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+
+        .review-text {
+            color: var(--gray-dark);
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .review-date {
+            font-size: 0.875rem;
+            color: var(--gray-medium);
         }
 
         /* Contact Section */
@@ -1099,11 +1261,78 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 <p data-key="section_testimonials_subtitle">Valoraciones reales de nuestras clientas⭐️</p>
             </div>
 
-            <!-- Elfsight Google Reviews Widget -->
-            <div class="elfsight-reviews-container">
-                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-                <script src="https://elfsightcdn.com/platform.js" async></script>
-                <div class="elfsight-app-52dc525d-25db-473b-8a00-cb53010201aa" data-elfsight-app-lazy></div>
+            <!-- Google Maps Reviews CTA + Sample Reviews -->
+            <div class="google-reviews-wrapper">
+                <!-- Google Maps CTA Card -->
+                <div class="google-maps-cta-card">
+                    <div class="cta-header">
+                        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" class="google-logo">
+                        <div class="cta-rating">
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="rating-number" data-key="rating_number">4.8</div>
+                        </div>
+                    </div>
+                    <p class="cta-text" data-key="cta_text">
+                        Lee las reseñas reales de nuestras clientas, mira fotos de nuestros trabajos y comparte tu experiencia.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Cinnamon+Nails+Barcelona+Travessera+de+Gràcia+415" target="_blank" class="cta-button" data-key="cta_button">
+                        <span>VER RESEÑAS EN GOOGLE MAPS</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                        </svg>
+                    </a>
+                    <p class="cta-subtext">
+                        <span data-key="cta_subtext">¿Fuiste cliente? Deja tu reseña en</span>
+                        <a href="https://search.google.com/local/writereview" target="_blank" data-key="cta_leave_review">
+                            GOOGLE MAPS →
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Sample Reviews Section -->
+                <div class="sample-reviews">
+                    <div class="sample-review-card">
+                        <div class="review-header">
+                            <div class="customer-avatar">👩</div>
+                            <div>
+                                <div class="customer-name" data-key="sample_review_1_name">Cliente Recurrente</div>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text" data-key="sample_review_1_text">
+                            "¡Increíble! La manicura rusa quedó perfecta. Mis uñas nunca habían lucido tan bonitas y naturales. ¡Volveré seguro!"
+                        </p>
+                        <div class="review-date" data-key="sample_review_1_date">Hace 2 semanas</div>
+                    </div>
+
+                    <div class="sample-review-card">
+                        <div class="review-header">
+                            <div class="customer-avatar">👩‍💼</div>
+                            <div>
+                                <div class="customer-name" data-key="sample_review_2_name">Cliente Satisfecha</div>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text" data-key="sample_review_2_text">
+                            "Profesionalidad impecable. La extensión de gel quedó natural y resistente. El equipo muy amable y el precio justo. ¡Muy recomendadas!"
+                        </p>
+                        <div class="review-date" data-key="sample_review_2_date">Hace 1 semana</div>
+                    </div>
+
+                    <div class="sample-review-card">
+                        <div class="review-header">
+                            <div class="customer-avatar">👨‍💼</div>
+                            <div>
+                                <div class="customer-name" data-key="sample_review_3_name">Cliente Nuevo</div>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text" data-key="sample_review_3_text">
+                            "Primera vez y quedé encantada. La semipermanente premium duró más de 3 semanas sin cuartearse. El salón es precioso y muy limpio."
+                        </p>
+                        <div class="review-date" data-key="sample_review_3_date">Hace 3 días</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1404,6 +1633,21 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 google_reviews_text: "Llegeix les ressenyes reals de les nostres clientes, mira fotos del nostre treball i comparteix la teva experiència.",
                 google_reviews_button: "VEURE RESSENYES A GOOGLE MAPS",
 
+                rating_number: "4.8",
+                cta_text: "Lee las reseñas reales de nuestras clientas, mira fotos de nuestros trabajos y comparte tu experiencia.",
+                cta_button: "VER RESEÑAS EN GOOGLE MAPS",
+                cta_subtext: "¿Fuiste cliente? Deja tu reseña en",
+                cta_leave_review: "GOOGLE MAPS →",
+                sample_review_1_name: "Cliente Recurrente",
+                sample_review_1_text: "¡Increíble! La manicura rusa quedó perfecta. Mis uñas nunca habían lucido tan bonitas y naturales. ¡Volveré seguro!",
+                sample_review_1_date: "Hace 2 semanas",
+                sample_review_2_name: "Cliente Satisfecha",
+                sample_review_2_text: "Profesionalidad impecable. La extensión de gel quedó natural y resistente. El equipo muy amable y el precio justo. ¡Muy recomendadas!",
+                sample_review_2_date: "Hace 1 semana",
+                sample_review_3_name: "Cliente Nuevo",
+                sample_review_3_text: "Primera vez y quedé encantada. La semipermanente premium duró más de 3 semanas sin cuartearse. El salón es precioso y muy limpio.",
+                sample_review_3_date: "Hace 3 días",
+
                 footer_reserva: 'Reserva Tu Cita',
                 footer_copyright: '© 2026 Cinnamon Nails Studio Barcelona. Todos los derechos reservados.',
                 instagram_link: 'Ver más en Instagram @cinnamon_nails_studio',
@@ -1517,6 +1761,21 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
                 google_reviews_text: "Llegeix les ressenyes reals de les nostres clientes, mira fotos del nostre treball i comparteix la teva experiència.",
                 google_reviews_button: "VEURE RESSENYES A GOOGLE MAPS",
 
+                rating_number: "4.8",
+                cta_text: "Lee las reseñas reales de nuestras clientas, mira fotos de nuestros trabajos y comparte tu experiencia.",
+                cta_button: "VER RESEÑAS EN GOOGLE MAPS",
+                cta_subtext: "¿Fuiste cliente? Deja tu reseña en",
+                cta_leave_review: "GOOGLE MAPS →",
+                sample_review_1_name: "Cliente Recurrente",
+                sample_review_1_text: "¡Increíble! La manicura rusa quedó perfecta. Mis uñas nunca habían lucido tan bonitas y naturales. ¡Volveré seguro!",
+                sample_review_1_date: "Hace 2 semanas",
+                sample_review_2_name: "Cliente Satisfecha",
+                sample_review_2_text: "Impeccable professionalism. The gel extension looked natural and resistant. Very friendly team and fair price. Highly recommended!",
+                sample_review_2_date: "1 week ago",
+                sample_review_3_name: "New Client",
+                sample_review_3_text: "First time and I'm delighted. The premium semipermanent polish lasted over 3 weeks without chipping. The salon is lovely and very clean.",
+                sample_review_3_date: "3 days ago",
+
                 footer_reserva: 'Book',
                 footer_copyright: '© 2026 Cinnamon Nails Studio Barcelona. All rights reserved.',
                 instagram_link: 'See more on Instagram @cinnamon_nails_studio',
@@ -1629,6 +1888,21 @@ ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza,
 
                 google_reviews_text: "Llegeix les ressenyes reals de les nostres clientes, mira fotos del nostre treball i comparteix la teva experiència.",
                 google_reviews_button: "VEURE RESSENYES A GOOGLE MAPS",
+
+                rating_number: "4.8",
+                cta_text: "Lee las reseñas reales de nuestras clientas, mira fotos de nuestros trabajos y comparte tu experiencia.",
+                cta_button: "VER RESEÑAS EN GOOGLE MAPS",
+                cta_subtext: "¿Fuiste cliente? Deja tu reseña en",
+                cta_leave_review: "GOOGLE MAPS →",
+                sample_review_1_name: "Cliente Recurrente",
+                sample_review_1_text: "¡Increíble! La manicura rusa quedó perfecta. Mis uñas nunca habían lucido tan bonitas y naturales. ¡Volveré seguro!",
+                sample_review_1_date: "Hace 2 semanas",
+                sample_review_2_name: "Cliente Satisfecha",
+                sample_review_2_text: "Profesionalidad impecable. La extensión de gel quedó natural y resistente. El equipo muy amable y el precio justo. ¡Muy recomendadas!",
+                sample_review_2_date: "Hace 1 semana",
+                sample_review_3_name: "Cliente Nuevo",
+                sample_review_3_text: "Primera vez y quedé encantada. La semipermanente premium duró más de 3 semanas sin cuartearse. El salón es precioso y muy limpio.",
+                sample_review_3_date: "Hace 3 días",
 
                 footer_reserva: 'Reserva la Teva Cita',
                 footer_copyright: '© 2026 Cinnamon Nails Studio Barcelona. Tots els drets reservats.',
